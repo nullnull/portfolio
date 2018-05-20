@@ -3,15 +3,15 @@
     <div>
       <app-logo/>
       <h1 class="title">
-        portfolio
+        About
       </h1>
       <h2 class="subtitle">
-        Nuxt.js project
+        This is about page
       </h2>
       <div class="links">
         <nuxt-link
-          to="/about"
-          class="button--green">About</nuxt-link>
+          to="/"
+          class="button--green">to TOP</nuxt-link>
         <a
           href="https://github.com/nuxt/nuxt.js"
           target="_blank"
@@ -32,9 +32,8 @@ export default {
   transition: {
     appear: false,
     enter (el, done) {
-      console.log('entered');
       requestAnimationFrame(() => {
-        TweenMax.staggerTo('.container', 1, {
+        TweenMax.staggerTo('.title', 1, {
           y: 0,
           opacity: 1,
           ease: Back.easeOut.config(3),

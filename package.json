@@ -13,6 +13,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "gsap": "^1.20.4",
     "nuxt": "^1.0.0"
   },
   "devDependencies": {
