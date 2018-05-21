@@ -2,6 +2,9 @@ module.exports = {
   css: [
     '@/assets/css/main.styl'
   ],
+  plugins: [
+    '@/plugins/mixin'
+  ],
   /*
   ** Headers of the page
   */

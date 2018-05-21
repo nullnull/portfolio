@@ -3,72 +3,60 @@ html
   body
     section.container
       div
-        app-logo
-        h1.title
-          | portfolio
-        h2.subtitle
-          | Nuxt.js project
-        .links
-          nuxt-link.button--green(to="/about") About
-          a.button--grey(href="https://github.com/nuxt/nuxt.js" target="_blank") GitHub
+        .item.title
+          | katsuma narisawa
+        SwitchText.item
+      .dummy.item
+      WaitingScroll.item
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
-import {TweenMax, Elastic, Back} from 'gsap'
+import SwitchText from '~/components/SwitchText'
+import WaitingScroll from '~/components/WaitingScroll'
+import {TweenMax, Back} from 'gsap'
 
 export default {
   components: {
-    AppLogo
+    SwitchText,
+    WaitingScroll,
   },
   transition: {
-    appear: false,
-    enter (el, done) {
-      console.log('entered');
+    appear: true,
+    async enter (el, done) {
+      await this.$delay(1000)
       requestAnimationFrame(() => {
-        TweenMax.staggerTo('.container', 1, {
+        TweenMax.staggerTo('.item', 1.3, {
+          // scaleX: 1,
           y: 0,
           opacity: 1,
-          ease: Back.easeOut.config(3),
+          // transformOrigin: 'left center',
+          ease: 'ease',
           startAt: {
-            y: '40px',
+            // scaleX: 0,
+            y: '20px',
             opacity: 0
           }
-        }, 0.1, () => {
-          done()
-        })
-        TweenMax.staggerTo('.container', 1, {
-          scaleX: 1,
-          x: 0,
-          opacity: 1,
-          transformOrigin: 'left center',
-          ease: Back.easeOut.config(3),
-          startAt: {
-            scaleX: 0,
-            x: '-20px',
-            opacity: 0
-          }
-        }, 0.1)
+        }, 1.3)
       })
     },
-    leave (el, done) {
-      requestAnimationFrame(() => {
-        TweenMax.staggerTo('.container', 0.7, {
-          y: '-40px',
-          opacity: 0,
-          ease: Back.easeIn.config(3)
-        }, 0.1, () => {
-          done()
-        })
-        TweenMax.staggerTo('.container', 0.7, {
-          scaleX: 0,
-          x: '20px',
-          opacity: 0,
-          transformOrigin: 'right center',
-          ease: Back.easeIn.config(3)
-        }, 0.1)
-      })
-    }
+    // leave (el, done) {
+    //   requestAnimationFrame(() => {
+    //     TweenMax.staggerTo('.container', 0.7, {
+    //       y: '-40px',
+    //       opacity: 0,
+    //       ease: Back.easeIn.config(3)
+    //     }, 0.1, () => {
+    //       done()
+    //     })
+    //     TweenMax.staggerTo('.container', 0.7, {
+    //       scaleX: 0,
+    //       x: '20px',
+    //       opacity: 0,
+    //       transformOrigin: 'right center',
+    //       ease: Back.easeIn.config(3)
+    //     }, 0.1)
+    //   })
+    // }
   }
 }
 </script>
@@ -83,18 +71,14 @@ export default {
 
 .title
   display block
-  font-weight 300
-  font-size 100px
+  text-transform uppercase
+  font-size 20px
+  letter-spacing 4px
+  display block
+  text-align center
+  position relative
   color #35495e
-  letter-spacing 1px
-
-.subtitle
-  font-weight 300
-  font-size 42px
-  color #526488
-  word-spacing 5px
+  font-weight 150
   padding-bottom 15px
-
-.links
-  padding-top 15px
+  opacity 0
 </style>
