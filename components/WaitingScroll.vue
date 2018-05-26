@@ -11,7 +11,7 @@
   position relative
   width 8px
   height 8px
-  background-color #526488
+  background-color white
   border-radius 100%
   margin 0 auto
   bottom 0

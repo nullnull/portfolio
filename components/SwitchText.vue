@@ -37,7 +37,7 @@ export default {
           x: 0,
           startAt: {
             opacity: 0,
-            x: -20,
+            x: -10,
           },
           onComplete() {
             done();
@@ -50,7 +50,7 @@ export default {
       requestAnimationFrame(() => {
         TweenMax.to(el, 1.3, {
           opacity: 0,
-          x: 20,
+          x: 10,
           startAt: {
             opacity: 1,
             x: 0,
@@ -70,7 +70,6 @@ export default {
 .root
   font-weight 100
   font-size 15px
-  color #526488
   word-spacing 0px
   padding-bottom 15px
   line-height: 1.5em

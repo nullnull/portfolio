@@ -1,6 +1,7 @@
 <template lang="pug">
 html
   body
+    PanDownBackground
     section.container
       div
         .item.title
@@ -11,12 +12,14 @@ html
 </template>
 
 <script>
+import PanDownBackground from '~/components/PanDownBackground'
 import SwitchText from '~/components/SwitchText'
 import WaitingScroll from '~/components/WaitingScroll'
 import {TweenMax, Back} from 'gsap'
 
 export default {
   components: {
+    PanDownBackground,
     SwitchText,
     WaitingScroll,
   },
@@ -28,7 +31,7 @@ export default {
         TweenMax.staggerTo('.item', 1.3, {
           // scaleX: 1,
           y: 0,
-          opacity: 1,
+          opacity: 0.9,
           // transformOrigin: 'left center',
           ease: 'ease',
           startAt: {
@@ -77,7 +80,6 @@ export default {
   display block
   text-align center
   position relative
-  color #35495e
   font-weight 150
   padding-bottom 15px
   opacity 0
