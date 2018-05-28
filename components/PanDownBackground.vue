@@ -11,11 +11,12 @@ export default {
   methods: {
     async enter(el, done) {
       TweenMax.set(el, { opacity: 0 });
+      await this.$delay(3000);
       requestAnimationFrame(() => {
-        TweenMax.fromTo(el, 4, {opacity: 0}, {opacity: 1, onComplete() {done()}})
+        TweenMax.fromTo(el, 3, {opacity: 0}, {opacity: 0.8, onComplete() {done()}})
       });
       requestAnimationFrame(() => {
-        TweenMax.fromTo(el, 40, {y: 50}, {y: 0, onComplete() {done()}})
+        TweenMax.fromTo(el, 10, {y: 0}, {y: -20, onComplete() {done()}})
       });
     },
     // async leave(el, done) {

@@ -29,14 +29,11 @@ export default {
       await this.$delay(1000)
       requestAnimationFrame(() => {
         TweenMax.staggerTo('.item', 1.3, {
-          // scaleX: 1,
           y: 0,
           opacity: 0.9,
-          // transformOrigin: 'left center',
           ease: 'ease',
           startAt: {
-            // scaleX: 0,
-            y: '20px',
+            y: 5,
             opacity: 0
           }
         }, 1.3)
@@ -83,4 +80,5 @@ export default {
   font-weight 150
   padding-bottom 15px
   opacity 0
+
 </style>

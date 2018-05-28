@@ -17,7 +17,8 @@ export default {
       ];
     }
   },
-  created() {
+  async created() {
+    await this.$delay(2000);
     setInterval(() => {
       this.currentIndex = (this.currentIndex + 1) % this.texts.length;
     }, 4000);
@@ -73,7 +74,7 @@ export default {
   word-spacing 0px
   padding-bottom 15px
   line-height: 1.5em
-  opacity 1
+  opacity 0
   position relative
 .text
   position absolute
