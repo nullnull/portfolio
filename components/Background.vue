@@ -4,6 +4,20 @@
       img(src='~/assets/images/me1.jpg')
 </template>
 
+<script>
+export default {
+  methods: {
+    async enter(el, done) {
+      TweenMax.set(el, { opacity: 0 });
+      done();
+      requestAnimationFrame(() => {
+        TweenMax.to(el, 1, {opacity: 1.0})
+      });
+    },
+  }
+}
+</script>
+
 <style lang="stylus" scoped>
 .root
   display flex
@@ -19,7 +33,7 @@ img
   right 0
   margin auto
   object-fit cover
-  opacity 0.5
+  opacity 1.0
   height 100vh
   width 100%
 </style>

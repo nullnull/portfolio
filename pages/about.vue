@@ -1,5 +1,5 @@
 <template lang="pug">
-.root
+.page-root
   Background
   nuxt-link(to='/')
     .container
@@ -17,20 +17,7 @@ export default {
   },
   transition: {
     appear: true,
-    async enter (el, done) {
-      await this.$delay(1000)
-      requestAnimationFrame(() => {
-        TweenMax.staggerTo('.item', 3.3, {
-          y: 0,
-          opacity: 0.9,
-          ease: 'ease',
-          startAt: {
-            y: 5,
-            opacity: 0
-          }
-        }, 1.3)
-      })
-    },
+    mode: 'in-out',
     leave (el, done) {
     //   requestAnimationFrame(() => {
     //     TweenMax.staggerTo('.container', 0.7, {
@@ -48,6 +35,7 @@ export default {
     //       ease: Back.easeIn.config(3)
     //     }, 0.1)
     //   })
+      done();
     }
   }
 }

@@ -1,14 +1,17 @@
 <template lang="pug">
-html
-  body
-    PanDownBackground
-    section.container
-      div
-        .item.title
-          | katsuma narisawa
-        SwitchText.item
-      .dummy.item
+.page-root#index
+  PanDownBackground
+  section.container
+    div
+      .item.title
+        | katsuma narisawa
+      SwitchText.item
+    .dummy.item
+    nuxt-link(to="/about")
       WaitingScroll.item
+  .wipe-box
+  .wipe-box1
+  .wipe-box2
 </template>
 
 <script>
@@ -25,38 +28,34 @@ export default {
   },
   transition: {
     appear: true,
+    mode: 'in-out',
     async enter (el, done) {
-      await this.$delay(1000)
+      await this.$delay(1000);
       requestAnimationFrame(() => {
-        TweenMax.staggerTo('.item', 1.3, {
+        TweenMax.staggerTo('.item', 0.1, {
           y: 0,
           opacity: 0.9,
           ease: 'ease',
           startAt: {
             y: 5,
             opacity: 0
-          }
-        }, 1.3)
-      })
+          },
+          onComplete() { done() }
+        }, 0.1)
+      });
     },
-    // leave (el, done) {
-    //   requestAnimationFrame(() => {
-    //     TweenMax.staggerTo('.container', 0.7, {
-    //       y: '-40px',
-    //       opacity: 0,
-    //       ease: Back.easeIn.config(3)
-    //     }, 0.1, () => {
-    //       done()
-    //     })
-    //     TweenMax.staggerTo('.container', 0.7, {
-    //       scaleX: 0,
-    //       x: '20px',
-    //       opacity: 0,
-    //       transformOrigin: 'right center',
-    //       ease: Back.easeIn.config(3)
-    //     }, 0.1)
-    //   })
-    // }
+    leave (el, done) {
+      TweenMax.set(el, { 'z-index': 1 });
+      requestAnimationFrame(() => {
+        TweenMax.to('.item', 1, {opacity: 0});
+        TweenMax.to('.wipe-box1', 1, {height: '100vh'});
+        TweenMax.to('.wipe-box2', 1, {height: '100vh', delay: 0.6 });
+        TweenMax.to('#index', 1, {height: '0vh', delay: 1.0, onComplete() {
+          TweenMax.set(el, { 'z-index': 0 });
+          done()
+        }});
+      });
+    }
   }
 }
 </script>
@@ -80,5 +79,15 @@ export default {
   font-weight 150
   padding-bottom 15px
   opacity 0
+
+.wipe-box1,
+.wipe-box2,
+.wipe-box
+  position absolute
+  background-color black
+  width 100%
+  height 0
+  opacity 0.5
+  bottom 0
 
 </style>
