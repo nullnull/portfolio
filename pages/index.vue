@@ -2,13 +2,13 @@
 .page-root
   #index
     Background
-    section.container
+    .container
       div
-        TitleText.fade-in-fade-out
-        SwitchText.fade-in-fade-out
-      .dummy.fade-in-fade-out
+        TitleText.fade-in-fade-out-on-page
+        SwitchText.fade-in-fade-out-on-page
+      .dummy.fade-in-fade-out-on-page
     nuxt-link(to="/about")
-      WaitingScroll.fade-in-fade-out
+      WaitingScroll.fade-in-fade-out-on-page
     .page-transition-items
       .wipe1-box1
       .wipe1-box2
@@ -19,18 +19,18 @@
 <script>
 import Background from '~/components/pages/top/Background'
 import NextPageBackground from '~/components/pages/about/Background'
-import TitleText from '~/components/pages/top/TitleText'
 import SwitchText from '~/components/pages/top/SwitchText'
+import TitleText from '~/components/pages/top/TitleText'
 import WaitingScroll from '~/components/common/WaitingScroll'
 import wipe1 from '~/animations/page_transitions/wipe1'
-import {TweenMax, Back} from 'gsap'
+import TweenMax from 'gsap'
 
 export default {
   components: {
     Background,
     NextPageBackground,
-    TitleText,
     SwitchText,
+    TitleText,
     WaitingScroll,
   },
   transition: {
@@ -38,21 +38,17 @@ export default {
     async enter (el, done) {
       await this.$delay(1000);
       requestAnimationFrame(() => {
-        TweenMax.staggerTo('.fade-in-fade-out', 0.1, {
-          y: 0,
-          opacity: 0.9,
+        TweenMax.staggerTo('.fade-in-fade-out-on-page', 0.1, {
           ease: 'ease',
-          startAt: {
-            y: 5,
-            opacity: 0
-          },
+          startAt: { opacity: 0, y: 5, },
+          opacity: 0.9, y: 0,
           onComplete() { done() }
         }, 0.1)
       });
     },
     leave (el, done) {
       requestAnimationFrame(() => {
-        TweenMax.to('#index .fade-in-fade-out', 1, {opacity: 0});
+        TweenMax.to('#index .fade-in-fade-out-on-page', 1, {opacity: 0});
       });
       wipe1(el, done, '#index');
     }
@@ -74,8 +70,8 @@ export default {
     min-height 100vh
     text-align center
 
-  .fade-in-fade-out
-    opacity 0
+.fade-in-fade-out-on-page
+  opacity 0
 
 .next-page
   opacity 0

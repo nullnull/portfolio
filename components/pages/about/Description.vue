@@ -22,13 +22,9 @@ export default {
       await this.$delay(800);
       requestAnimationFrame(() => {
         TweenMax.staggerTo('.description-fade-in', 0.8, {
-          y: 0,
-          opacity: 0.9,
           ease: 'ease',
-          startAt: {
-            y: 20,
-            opacity: 0
-          },
+          startAt: { opacity: 0, y: 20, },
+          opacity: 0.9, y: 0,
           onComplete() { done() }
         }, 0.1)
       });
@@ -38,7 +34,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import "/Users/katsumaPro/src/git/portfolio/assets/css/mixin.styl"
 .root
   text-align left
 

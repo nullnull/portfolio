@@ -25,13 +25,13 @@ export default {
 
 <style lang="stylus" scoped>
 .root
-  display flex
-  justify-content space-around
-  flex-wrap: wrap
   align-items center
+  display flex
+  flex-wrap: wrap
   height 100vh
-  width 100%
+  justify-content space-around
   position absolute
+  width 100%
 img
   filter brightness(60%)
   height 110vh
