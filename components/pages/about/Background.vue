@@ -1,20 +1,11 @@
 <template lang="pug">
   .root
-    transition(appear @enter='enter')
-      img(src='~/assets/images/me1.jpg')
+    img(src='~/assets/images/me1.jpg')
 </template>
 
 <script>
 export default {
-  methods: {
-    async enter(el, done) {
-      TweenMax.set(el, { opacity: 0 });
-      done();
-      requestAnimationFrame(() => {
-        TweenMax.to(el, 1, {opacity: 1.0})
-      });
-    },
-  }
+  methods: {}
 }
 </script>
 
@@ -26,7 +17,9 @@ export default {
   align-items center
   height 100vh
   width 100%
+  top 0
   position absolute
+
 img
   filter brightness(40%)
   height 100vh

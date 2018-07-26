@@ -11,6 +11,9 @@ a:link
   text-decoration none
 
 .page-root
-  overflow hidden
   position absolute
   width 100%
+  &::after
+    content ''
+    display block
+    padding-top 100vh

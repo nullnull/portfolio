@@ -1,10 +1,11 @@
 <template lang="pug">
-.page-root#about
-  Background
-  section.container
-    Description.fade-in-fade-out
-  nuxt-link(to="/")
-    WaitingScroll.fade-in-fade-out
+.page-root
+  #about
+    Background
+    section.container
+      Description
+    nuxt-link(to="/")
+      WaitingScroll.fade-in-fade-out-page
 </template>
 
 <script>
@@ -21,21 +22,21 @@ export default {
   },
   transition: {
     appear: true,
-    mode: 'in-out',
-    // async enter (el, done) {
-    //   requestAnimationFrame(() => {
-    //     TweenMax.staggerTo('.fade-in-fade-out', 0.1, {
-    //       y: 0,
-    //       opacity: 0.9,
-    //       ease: 'ease',
-    //       startAt: {
-    //         y: 5,
-    //         opacity: 0
-    //       },
-    //       onComplete() { done() }
-    //     }, 0.1)
-    //   });
-    // },
+    async enter (el, done) {
+      requestAnimationFrame(() => {
+        TweenMax.staggerTo('.fade-in-fade-out-page', 1.0, {
+          y: 0,
+          opacity: 0.9,
+          ease: 'ease',
+          startAt: {
+            y: 5,
+            opacity: 0
+          },
+          delay: 3.0,
+          onComplete() { done() }
+        }, 0.1)
+      });
+    },
     leave (el, done) {
     //   requestAnimationFrame(() => {
     //     TweenMax.staggerTo('.container', 0.7, {
@@ -60,13 +61,15 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.container
-  align-items center
-  display flex
-  justify-content center
-  min-height 100vh
-  text-align center
+#about
+  position relative
+  .container
+    align-items center
+    display flex
+    justify-content center
+    min-height 100vh
+    text-align center
 
-.fade-in-fade-out
+.fade-in-fade-out-page
   opacity 0
 </style>
