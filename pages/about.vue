@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import Background from '~/components/Background.vue'
+import Background from '~/components/pages/about/Background.vue'
 import {TweenMax, Elastic, Back} from 'gsap'
 
 export default {

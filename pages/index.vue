@@ -1,14 +1,13 @@
 <template lang="pug">
 .page-root#index
-  PanDownBackground
+  Background
   section.container
     div
-      .item.title
-        | katsuma narisawa
-      SwitchText.item
-    .dummy.item
-    nuxt-link(to="/about")
-      WaitingScroll.item
+      TitleText.fade-in-fade-out
+      SwitchText.fade-in-fade-out
+    .dummy.fade-in-fade-out
+  nuxt-link(to="/about")
+    WaitingScroll.fade-in-fade-out
   .page-transition-items
     .wipe1-box1
     .wipe1-box2
@@ -16,15 +15,17 @@
 </template>
 
 <script>
-import PanDownBackground from '~/components/PanDownBackground'
-import SwitchText from '~/components/SwitchText'
-import WaitingScroll from '~/components/WaitingScroll'
+import Background from '~/components/pages/top/Background'
+import TitleText from '~/components/pages/top/TitleText'
+import SwitchText from '~/components/pages/top/SwitchText'
+import WaitingScroll from '~/components/common/WaitingScroll'
 import wipe1 from '~/animations/page_transitions/wipe1'
 import {TweenMax, Back} from 'gsap'
 
 export default {
   components: {
-    PanDownBackground,
+    Background,
+    TitleText,
     SwitchText,
     WaitingScroll,
   },
@@ -34,7 +35,7 @@ export default {
     async enter (el, done) {
       await this.$delay(1000);
       requestAnimationFrame(() => {
-        TweenMax.staggerTo('.item', 0.1, {
+        TweenMax.staggerTo('.fade-in-fade-out', 0.1, {
           y: 0,
           opacity: 0.9,
           ease: 'ease',
@@ -48,7 +49,7 @@ export default {
     },
     leave (el, done) {
       requestAnimationFrame(() => {
-        TweenMax.to('.item', 1, {opacity: 0});
+        TweenMax.to('.fade-in-fade-out', 1, {opacity: 0});
       });
       wipe1(el, done, '#index');
     }
@@ -58,20 +59,12 @@ export default {
 
 <style lang="stylus" scoped>
 .container
-  min-height 100vh
+  align-items center
   display flex
   justify-content center
-  align-items center
+  min-height 100vh
   text-align center
 
-.title
-  display block
-  text-transform uppercase
-  font-size 20px
-  letter-spacing 4px
-  text-align center
-  position relative
-  font-weight 150
-  padding-bottom 15px
+.fade-in-fade-out
   opacity 0
 </style>

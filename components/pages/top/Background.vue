@@ -33,11 +33,12 @@ export default {
   width 100%
   position absolute
 img
-  position absolute
+  filter brightness(60%)
+  height 110vh
   left 0
-  right 0
   margin auto
   object-fit cover
-  height 110vh
+  position absolute
+  right 0
   width 100%
 </style>
