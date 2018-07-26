@@ -38,12 +38,12 @@ export default {
     async enter (el, done) {
       await this.$delay(1000);
       requestAnimationFrame(() => {
-        TweenMax.staggerTo('.fade-in-fade-out-on-page', 0.1, {
+        TweenMax.staggerTo('.fade-in-fade-out-on-page', 1.3, {
           ease: 'ease',
           startAt: { opacity: 0, y: 5, },
           opacity: 0.9, y: 0,
           onComplete() { done() }
-        }, 0.1)
+        }, 1.3)
       });
     },
     leave (el, done) {
