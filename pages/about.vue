@@ -1,23 +1,41 @@
 <template lang="pug">
-.page-root
+.page-root#about
   Background
-  nuxt-link(to='/')
-    .container
-      .title.item
-        | about
+  section.container
+    Description.fade-in-fade-out
+  nuxt-link(to="/")
+    WaitingScroll.fade-in-fade-out
 </template>
 
 <script>
 import Background from '~/components/pages/about/Background.vue'
+import Description from '~/components/pages/about/Description.vue'
+import WaitingScroll from '~/components/common/WaitingScroll'
 import {TweenMax, Elastic, Back} from 'gsap'
 
 export default {
   components: {
-    Background
+    Background,
+    Description,
+    WaitingScroll
   },
   transition: {
     appear: true,
     mode: 'in-out',
+    // async enter (el, done) {
+    //   requestAnimationFrame(() => {
+    //     TweenMax.staggerTo('.fade-in-fade-out', 0.1, {
+    //       y: 0,
+    //       opacity: 0.9,
+    //       ease: 'ease',
+    //       startAt: {
+    //         y: 5,
+    //         opacity: 0
+    //       },
+    //       onComplete() { done() }
+    //     }, 0.1)
+    //   });
+    // },
     leave (el, done) {
     //   requestAnimationFrame(() => {
     //     TweenMax.staggerTo('.container', 0.7, {
@@ -43,22 +61,12 @@ export default {
 
 <style lang="stylus" scoped>
 .container
-  min-height 100vh
+  align-items center
   display flex
   justify-content center
-  align-items center
+  min-height 100vh
   text-align center
 
-.title
-  display block
-  text-transform uppercase
-  font-size 20px
-  letter-spacing 4px
-  display block
-  text-align center
-  position relative
-  font-weight 150
-  padding-bottom 15px
+.fade-in-fade-out
   opacity 0
-
 </style>

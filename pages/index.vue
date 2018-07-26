@@ -49,7 +49,7 @@ export default {
     },
     leave (el, done) {
       requestAnimationFrame(() => {
-        TweenMax.to('.fade-in-fade-out', 1, {opacity: 0});
+        TweenMax.to('#index .fade-in-fade-out', 1, {opacity: 0});
       });
       wipe1(el, done, '#index');
     }
@@ -58,13 +58,15 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.container
-  align-items center
-  display flex
-  justify-content center
-  min-height 100vh
-  text-align center
+#index
+  font-family "DIN Next W04","Helvetica Neue",Helvetica,Arial,sans-serif
+  .container
+    align-items center
+    display flex
+    justify-content center
+    min-height 100vh
+    text-align center
 
-.fade-in-fade-out
-  opacity 0
+  .fade-in-fade-out
+    opacity 0
 </style>
