@@ -1,9 +1,15 @@
 module.exports = {
   css: [
-    '@/assets/css/main.styl'
+    '@/assets/css/main.styl',
+    '@/animations/page_transitions.styl'
   ],
   plugins: [
     '@/plugins/mixin'
+  ],
+  modules: [
+    ['nuxt-stylus-resources-loader', [
+        __dirname + '/assets/css/mixin.styl',
+    ]],
   ],
   /*
   ** Headers of the page
@@ -39,6 +45,13 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
+      // extend default options
+      // const stylus = config.module.rules[0].options.loaders.stylus.find(e => e.loader == 'stylus-loader')
+      // Object.assign(stylus.options, {
+      //   import: [
+      //     '@/assets/css/mixins.styl'
+      //   ]
+      // })
     }
   }
 }

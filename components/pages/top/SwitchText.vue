@@ -69,17 +69,17 @@ export default {
 
 <style lang="stylus" scoped>
 .root
-  font-weight 100
   font-size 15px
-  word-spacing 0px
-  padding-bottom 15px
+  font-weight 100
   line-height: 1.5em
-  opacity 0
+  padding-bottom 15px
   position relative
+  word-spacing 0px
+
 .text
-  position absolute
-  top 0
   left 0
-  right 0
   margin auto
+  position absolute
+  right 0
+  top 0
 </style>

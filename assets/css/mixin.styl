@@ -1,0 +1,19 @@
+pc-only()
+  @media screen and (min-width: 731px)
+    {block}
+
+sp-only()
+  @media screen and (max-width: 730px)
+    {block}
+
+@media screen and (max-width: 730px) {
+  .pc-only {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 731px) {
+  .sp-only {
+    display: none;
+  }
+}
