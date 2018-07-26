@@ -1,6 +1,7 @@
 module.exports = {
   css: [
-    '@/assets/css/main.styl'
+    '@/assets/css/main.styl',
+    '@/animations/page_transitions.styl'
   ],
   plugins: [
     '@/plugins/mixin'

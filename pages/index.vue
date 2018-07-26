@@ -9,15 +9,17 @@
     .dummy.item
     nuxt-link(to="/about")
       WaitingScroll.item
-  .wipe-box
-  .wipe-box1
-  .wipe-box2
+  .page-transition-items
+    .wipe1-box1
+    .wipe1-box2
+    .wipe1-box3
 </template>
 
 <script>
 import PanDownBackground from '~/components/PanDownBackground'
 import SwitchText from '~/components/SwitchText'
 import WaitingScroll from '~/components/WaitingScroll'
+import wipe1 from '~/animations/page_transitions/wipe1'
 import {TweenMax, Back} from 'gsap'
 
 export default {
@@ -45,16 +47,10 @@ export default {
       });
     },
     leave (el, done) {
-      TweenMax.set(el, { 'z-index': 1 });
       requestAnimationFrame(() => {
         TweenMax.to('.item', 1, {opacity: 0});
-        TweenMax.to('.wipe-box1', 1, {height: '100vh'});
-        TweenMax.to('.wipe-box2', 1, {height: '100vh', delay: 0.6 });
-        TweenMax.to('#index', 1, {height: '0vh', delay: 1.0, onComplete() {
-          TweenMax.set(el, { 'z-index': 0 });
-          done()
-        }});
       });
+      wipe1(el, done, '#index');
     }
   }
 }
@@ -73,21 +69,9 @@ export default {
   text-transform uppercase
   font-size 20px
   letter-spacing 4px
-  display block
   text-align center
   position relative
   font-weight 150
   padding-bottom 15px
   opacity 0
-
-.wipe-box1,
-.wipe-box2,
-.wipe-box
-  position absolute
-  background-color black
-  width 100%
-  height 0
-  opacity 0.5
-  bottom 0
-
 </style>
