@@ -2,7 +2,7 @@
 .page-root
   #about
     Background
-    section.container
+    section.center-container
       Description
     nuxt-link(to="/")
       WaitingScroll.fade-in-fade-out-on-page
@@ -44,11 +44,14 @@ export default {
   z-index 1
   height 100%
 
-  .container
-    align-items center
-    display flex
-    justify-content center
-    text-align center
+  .center-container
+    bottom 0
+    height 60%
+    left 0
+    margin auto
+    position absolute
+    right 0
+    top 0
 
 .fade-in-fade-out-on-page
   opacity 0
