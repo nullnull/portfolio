@@ -12,7 +12,6 @@
       .wipe1-box1
       .wipe1-box2
       .wipe1-box3
-  NextPageBackground.next-page
 </template>
 
 <script>
