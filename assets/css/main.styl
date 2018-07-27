@@ -1,9 +1,12 @@
+html, body
+  height 100%
+  overflow hidden
+
 body
   background-color black
   color white
   font-family: "游ゴシック体", "Yu Gothic", YuGothic, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', Osaka, sans-serif
   margin 0px
-  overflow hidden
   text-align center
 
 a:visited,
@@ -12,9 +15,11 @@ a:link
   text-decoration none
 
 .page-root
+  height 100%
+  overflow hidden
   position absolute
   width 100%
   &::after
     content ''
     display block
-    padding-top 100vh
+    padding-top 100%
