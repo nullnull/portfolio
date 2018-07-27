@@ -12,7 +12,6 @@
       .wipe1-box1
       .wipe1-box2
       .wipe1-box3
-  NextPageBackground.next-page
 </template>
 
 <script>
@@ -42,7 +41,7 @@ export default {
           startAt: { opacity: 0, y: 5, },
           opacity: 0.9, y: 0,
           onComplete() { done() }
-        }, 1.3)
+        }, 1)
       });
     },
     leave (el, done) {

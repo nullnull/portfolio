@@ -1,6 +1,9 @@
 <template lang="pug">
   .root
-    img(src='~/assets/images/me1.jpg')
+    template(v-if='isSp()')
+      img(src='~/assets/images/me1_sp.jpg')
+    template(v-else)
+      img(src='~/assets/images/me1.jpg')
 </template>
 
 <script>
