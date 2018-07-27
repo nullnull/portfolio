@@ -36,7 +36,7 @@ export default {
   width 100%
 img
   filter brightness(60%)
-  height 110vh
+  height 101vh
   left 0
   margin auto
   object-fit cover
