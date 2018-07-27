@@ -42,12 +42,12 @@ export default {
   position relative
   overflow hidden
   z-index 1
+  height 100%
 
   .container
     align-items center
     display flex
     justify-content center
-    min-height 100vh
     text-align center
 
 .fade-in-fade-out-on-page
