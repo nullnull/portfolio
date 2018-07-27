@@ -11,6 +11,14 @@ Vue.mixin({
     },
     $delay (ms) {
       return new Promise(resolve => setTimeout(resolve, ms))
+    },
+    isSp() {
+      if (process.browser) {
+        const widthOfSmartPhone = 730;
+        return window.innerWidth < widthOfSmartPhone;
+      } else {
+        return false;
+      }
     }
   }
 })

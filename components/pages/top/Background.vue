@@ -1,7 +1,10 @@
 <template lang="pug">
   .root
     transition(appear @enter='enter')
-      img(src='~/assets/images/sunset.jpg')
+      template(v-if='isSp()')
+        img(src='~/assets/images/sunset_sp.jpg')
+      template(v-else)
+        img(src='~/assets/images/sunset.jpg')
 </template>
 
 <script>
