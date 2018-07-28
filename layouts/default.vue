@@ -48,6 +48,9 @@ export default {
       this.goNextPage();
     },
     goNextPage() {
+      if (this.$store.state.menuVisibility) {
+        return;  // Do not go to next page when opening menu.
+      }
       const currentPath = this.$router.currentRoute.name;
       const nextPath = currentPathToNextPath[currentPath];
       this.$router.push(nextPath);
