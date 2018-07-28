@@ -13,6 +13,11 @@ import aboutBackground from '~/components/pages/about/Background'
 import draggable from '~/plugins/draggable';
 import wheelable from '~/plugins/wheelable';
 
+const currentPathToNextPath = {
+  'index': 'about',
+  'about': '/',
+};
+
 export default {
   components: {
     indexBackground,
@@ -25,8 +30,8 @@ export default {
   },
   created() {
     if (process.browser) {
-      window.addEventListener('keyup', function(e) {
-        console.log(e.key === 'ArrowDown');
+      window.addEventListener('keyup', (e) => {
+        this.goNextPage();
       });
     }
   },
@@ -37,10 +42,15 @@ export default {
   },
   methods: {
     eventWhenScrolledDown() {
-      console.log('scrolled down');
+      this.goNextPage();
     },
     eventWhenWheeledDown() {
-      console.log('wheeled down');
+      this.goNextPage();
+    },
+    goNextPage() {
+      const currentPath = this.$router.currentRoute.name;
+      const nextPath = currentPathToNextPath[currentPath];
+      this.$router.push(nextPath);
     },
   },
   mixins: [
