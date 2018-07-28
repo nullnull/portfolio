@@ -1,5 +1,5 @@
 <template lang="pug">
-  .root.fade-in-on-background
+  .root.fade-in-on-background(:style="style")
     transition(appear @enter='enter')
       template(v-if='isSp()')
         img(src='~/assets/images/sunset_sp.jpg')
@@ -11,6 +11,21 @@
 import {TweenMax} from 'gsap'
 
 export default {
+  computed: {
+    style() {
+      return `height: ${this.height}px`;
+    }
+  },
+  created() {
+    if (process.browser) {
+      return this.height = window.innerHeight;
+    }
+  },
+  data() {
+    return {
+      height: 0,
+    };
+  },
   methods: {
     async enter(el, done) {
       await this.$delay(2000);
@@ -30,13 +45,12 @@ export default {
   align-items center
   display flex
   flex-wrap: wrap
-  height 100vh
   justify-content space-around
   position absolute
   width 100%
 img
   filter brightness(60%)
-  height 101vh
+  height 105%
   left 0
   margin auto
   object-fit cover
