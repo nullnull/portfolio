@@ -1,6 +1,6 @@
 <template lang="pug">
   .root
-    .menu(v-show="visibility" @click='hideMenu')
+    .menu(v-show="menuVisibility" @click='hideMenu')
       .inner
         p.fade-in-on-menu(@click="goPage('/')")
           | top
@@ -9,17 +9,17 @@
         p.fade-in-on-menu
           | history
     .menu-button
-      i.bar.fas.fa-bars(@click='toggleMenu' ":class"="{'bar-when-visible': visibility}")
+      i.bar.fas.fa-bars(@click='toggleMenu' ":class"="{'bar-when-visible': menuVisibility}")
 </template>
 
 <script>
 import {TweenMax} from 'gsap'
 
 export default {
-  data() {
-    return {
-      visibility: false
-    };
+  computed: {
+    menuVisibility() {
+      return this.$store.state.menuVisibility;
+    }
   },
   methods: {
     goPage(path) {
@@ -28,7 +28,7 @@ export default {
     },
     showMenu() {
       document.querySelector('.page-root').classList.add("blur")
-      this.visibility = true;
+      this.$store.commit('showMenu');
 
       requestAnimationFrame(() => {
         TweenMax.staggerTo('.fade-in-on-menu', 0.8, {
@@ -50,10 +50,10 @@ export default {
         }, 0.05)
       });
       await this.$delay(500);
-      this.visibility = false;
+      this.$store.commit('hideMenu');
     },
     toggleMenu() {
-      if (this.visibility) {
+      if (this.menuVisibility) {
         this.hideMenu();
       } else {
         this.showMenu();
