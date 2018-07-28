@@ -2,9 +2,11 @@
   div(@touchstart="startTouch($event)" @touchmove.prevent="onTouch($event)" @touchend="stopDrag($event)" @mousedown="startDrag($event)" @mousemove.prevent="onDrag($event)" @mouseup="stopDrag($event)" @wheel="onWheel($event)")
     nuxt
     component(:is="nextPageBackgroundComponent")
+    Menu
 </template>
 
 <script>
+import Menu from '~/components/Menu'
 import indexBackground from '~/components/pages/top/BlackBackground'
 import aboutBackground from '~/components/pages/about/Background'
 import draggable from '~/plugins/draggable';
@@ -17,6 +19,7 @@ const currentPathToNextPath = {
 
 export default {
   components: {
+    Menu,
     indexBackground,
     aboutBackground,
   },
