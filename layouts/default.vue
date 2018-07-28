@@ -1,10 +1,7 @@
-<template>
-  <div @touchstart="startTouch($event)" @touchmove.prevent="onTouch($event)" @touchend="stopDrag($event)" @mousedown="startDrag($event)" @mousemove.prevent="onDrag($event)" @mouseup="stopDrag($event)" @wheel="onWheel($event)">
-    <div class="header">
-    </div>
-    <nuxt/>
-    <component :is="nextPageBackgroundComponent"></component>
-  </div>
+<template lang="pug">
+  div(@touchstart="startTouch($event)" @touchmove.prevent="onTouch($event)" @touchend="stopDrag($event)" @mousedown="startDrag($event)" @mousemove.prevent="onDrag($event)" @mouseup="stopDrag($event)" @wheel="onWheel($event)")
+    nuxt
+    component(:is="nextPageBackgroundComponent")
 </template>
 
 <script>
