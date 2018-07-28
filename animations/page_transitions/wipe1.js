@@ -1,10 +1,19 @@
-export default function wipe1(el, done, rootIndexSelector) {
+const nextPathToEyecatchTitle = {
+  'index': 'TOP',
+  'about': 'ABOUT ME',
+};
+
+export default function wipe1(el, done, rootIndexSelector, nextPath) {
   requestAnimationFrame(() => {
-    TweenMax.to('.wipe1-box1', 1, {height: '100%'});
-    TweenMax.to('.wipe1-box2', 1, {height: '100%', delay: 0.4 });
-    TweenMax.to('.wipe1-box3', 1, {height: '100%', delay: 0.8 });
+    TweenMax.to('.wipe1-box1', 0.8, {height: '100%'});
+    TweenMax.to('.wipe1-box2', 0.8, {height: '100%', delay: 0.3, onComplete() {
+      document.querySelector(".wipe1-text1").textContent = nextPathToEyecatchTitle[nextPath];
+      TweenMax.set('.wipe1-text1', { 'top': window.innerHeight / 2 - 30 });
+      TweenMax.to('.wipe1-text1', 0.1, {opacity: 1, delay: 0.2});
+    }});
+    TweenMax.to('.wipe1-box3', 0.8, {height: '100%', delay: 0.6 });
     TweenMax.set('.next-page', { 'opacity': 1 });
-    TweenMax.to(rootIndexSelector, 1, {height: '0%', delay: 2.0, onComplete() {
+    TweenMax.to(rootIndexSelector, 1, {height: '0%', delay: 2.5, onComplete() {
       done()
     }});
   });
