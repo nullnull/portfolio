@@ -4,7 +4,7 @@
 // 1. Import this plugin as mixin. ex. `mixins: [draggable]`
 // 2. Write following to your html.
 // <div @touchstart="startTouch($event)" @touchmove.prevent="onTouch($event)" @touchend="stopDrag($event)" @mousedown="startDrag($event)" @mousemove.prevent="onDrag($event)" @mouseup="stopDrag($event)">
-// 3. Implement `eventWhenScrolled**` to methods on your components, or use variables on data as you like.
+// 3. Implement `eventWhenDragged**` to methods on your components, or use variables on data as you like.
 
 class Direction {
   constructor(direction) {
@@ -75,14 +75,14 @@ export default {
       this.dragStartY = e.changedTouches[0].pageY;
     },
     stopDrag(_e) {
-      if (this.dragLengthX < -50) {
-        this.eventWhenScrolledRight();
-      } else if (this.dragLengthX > 50) {
-        this.eventWhenScrolledLeft();
-      } else if (this.dragLengthY > 50) {
-        this.eventWhenScrolledDown();
-      } else if (this.dragLengthY < -50) {
-        this.eventWhenScrolledUp();
+      if (this.dragLengthY > 20) {
+        this.eventWhenDraggedDown();
+      } else if (this.dragLengthY < -20) {
+        this.eventWhenDraggedUp();
+      } else if (this.dragLengthX < -20) {
+        this.eventWhenDraggedRight();
+      } else if (this.dragLengthX > 20) {
+        this.eventWhenDraggedLeft();
       }
       this.dragStartX = null;
       this.dragStartY = null;
@@ -99,9 +99,9 @@ export default {
     },
 
     // please override here
-    eventWhenScrolledRight() {},
-    eventWhenScrolledLeft() {},
-    eventWhenScrolledDown() {},
-    eventWhenScrolledUp() {},
+    eventWhenDraggedRight() {},
+    eventWhenDraggedLeft() {},
+    eventWhenDraggedDown() {},
+    eventWhenDraggedUp() {},
   },
 };

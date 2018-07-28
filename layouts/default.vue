@@ -41,7 +41,7 @@ export default {
     }
   },
   methods: {
-    eventWhenScrolledDown() {
+    eventWhenDraggedUp() {
       this.goNextPage();
     },
     eventWhenWheeledDown() {
