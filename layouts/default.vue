@@ -1,5 +1,5 @@
 <template>
-  <div @touchstart="startTouch($event)" @touchmove.prevent="onTouch($event)" @touchend="stopDrag($event)" @mousedown="startDrag($event)" @mousemove.prevent="onDrag($event)" @mouseup="stopDrag($event)">
+  <div @touchstart="startTouch($event)" @touchmove.prevent="onTouch($event)" @touchend="stopDrag($event)" @mousedown="startDrag($event)" @mousemove.prevent="onDrag($event)" @mouseup="stopDrag($event)" @wheel="onWheel($event)">
     <div class="header">
     </div>
     <nuxt/>
@@ -11,6 +11,7 @@
 import indexBackground from '~/components/pages/top/BlackBackground'
 import aboutBackground from '~/components/pages/about/Background'
 import draggable from '~/plugins/draggable';
+import wheelable from '~/plugins/wheelable';
 
 export default {
   components: {
@@ -31,8 +32,14 @@ export default {
     eventWhenScrolledDown() {
       console.log('scrolled down');
     },
+    eventWhenWheeledDown() {
+      console.log('wheeled down');
+    },
   },
-  mixins: [draggable],
+  mixins: [
+    draggable,
+    wheelable,
+  ],
   watch: {
     '$route' (to, from) {
       this.currentPage = to.name;
