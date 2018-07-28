@@ -57,7 +57,6 @@ export default {
             x: 0,
           },
           onComplete() {
-            console.log('leave done');
             done();
           }
         });
