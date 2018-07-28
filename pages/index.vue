@@ -50,7 +50,7 @@ export default {
       });
       wipe1(el, done, '#index');
     }
-  }
+  },
 }
 </script>
 
