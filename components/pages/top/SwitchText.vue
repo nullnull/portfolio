@@ -70,7 +70,7 @@ export default {
 <style lang="stylus" scoped>
 .root
   font-size 15px
-  font-weight 100
+  font-weight 200
   line-height: 1.5em
   padding-bottom 15px
   position relative

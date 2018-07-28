@@ -12,6 +12,6 @@ span
   letter-spacing 4px
   text-align center
   position relative
-  font-weight 150
+  font-weight 300
   padding-bottom 15px
 </style>
