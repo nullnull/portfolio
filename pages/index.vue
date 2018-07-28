@@ -12,6 +12,7 @@
       .wipe1-box1
       .wipe1-box2
       .wipe1-box3
+        .wipe1-text1
 </template>
 
 <script>
@@ -48,7 +49,7 @@ export default {
       requestAnimationFrame(() => {
         TweenMax.to('#index .fade-in-fade-out-on-page', 1, {opacity: 0});
       });
-      wipe1(el, done, '#index');
+      wipe1(el, done, '#index', this.$router.currentRoute.name);
     }
   },
 }
