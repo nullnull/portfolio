@@ -23,6 +23,13 @@ export default {
       return this.currentPage + 'Background';
     }
   },
+  created() {
+    if (process.browser) {
+      window.addEventListener('keyup', function(e) {
+        console.log(e.key === 'ArrowDown');
+      });
+    }
+  },
   data() {
     return {
       currentPage: 'index',
