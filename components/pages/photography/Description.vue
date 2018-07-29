@@ -8,13 +8,11 @@
         p.subtitle.description-fade-in
         //-  | 情報科学研究科 乾・岡崎研究室(2012-2014)
         p.item.description-fade-in
-          | フォトグラファーとしても活動中。
+          | フォトグラファーとしても活動中。このサイトで使用している写真は全て自分の写真です。
         p.item.description-fade-in
           | プロフィール写真撮影、カンファレンスカメラマンのご依頼など、お気軽にお問い合わせください。
         p.item.description-fade-in
-          | 実績：「一度きりの人生 絶対に行きたい夢の旅 50」カバー写真を撮影、第三回Stepフォトコンテスト入選、弘前の夜桜写真がTwitterで4.5万RTなど。RubyKaigi2018公式カメラマン。
-        p.item.description-fade-in
-          | ※このサイトで使用している写真は全て自分の写真です。
+          | 実績：RubyKaigi2018公式カメラマン。「一度きりの人生 絶対に行きたい夢の旅 50」カバー写真撮影。第三回Stepフォトコンテスト入選、弘前の夜桜写真がTwitterで4.5万RTなど。
 </template>
 
 <script>
