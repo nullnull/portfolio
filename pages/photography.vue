@@ -1,10 +1,10 @@
 <template lang="pug">
 .page-root
-  #univ
+  #photography
     Background
     section.center-container.fade-in-fade-out-on-page
       Description
-    nuxt-link(to="photography")
+    nuxt-link(to="/")
       WaitingScroll.fade-in-fade-out-on-page
     .page-transition-items
       .wipe1-box1
@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import Background from '~/components/pages/univ/Background.vue'
-import Description from '~/components/pages/univ/Description.vue'
+import Background from '~/components/pages/photography/Background.vue'
+import Description from '~/components/pages/photography/Description.vue'
 import WaitingScroll from '~/components/common/WaitingScroll'
 import pageTransition1 from '~/mixins/pageTransition1'
 
@@ -32,7 +32,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-#univ
+#photography
   position relative
   overflow hidden
   z-index 1
