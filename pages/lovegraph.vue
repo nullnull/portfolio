@@ -2,7 +2,7 @@
 .page-root
   #lovegraph
     Background
-    section.center-container
+    section.center-container.fade-in-fade-out-on-page
       Description
     nuxt-link(to="dena")
       WaitingScroll.fade-in-fade-out-on-page
