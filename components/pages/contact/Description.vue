@@ -49,15 +49,20 @@ export default {
 .root
   letter-spacing 3px
   text-align left
+  padding 0 5px
 
 .inner
-  padding 0 20px
+  padding 0 40px
   position relative
   text-align center
+  border solid 2px white
+  max-width 300px
+  margin auto
   +pc-only()
     padding 0 15%
 
 .more
+  padding-top 20px
   padding-bottom 40px
 
   a
@@ -72,7 +77,7 @@ export default {
     font-size 24px
 
 .email
-  font-size 14px
+  font-size 13px
   line-height 0.6em
   padding-top 15px
   padding-bottom 15px
@@ -104,6 +109,7 @@ span.underline
 
 .thanks
   padding-top 30px
+  padding-bottom 20px
 
   p
     font-size 0.5em
