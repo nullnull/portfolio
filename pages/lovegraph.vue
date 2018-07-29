@@ -6,13 +6,18 @@
       Description
     nuxt-link(to="/")
       WaitingScroll.fade-in-fade-out-on-page
+    .page-transition-items
+      .wipe1-box1
+      .wipe1-box2
+      .wipe1-box3
+        .wipe1-text1
 </template>
 
 <script>
 import Background from '~/components/pages/lovegraph/Background.vue'
 import Description from '~/components/pages/lovegraph/Description.vue'
 import WaitingScroll from '~/components/common/WaitingScroll'
-import TweenMax from 'gsap'
+import pageTransition1 from '~/mixins/pageTransition1'
 
 export default {
   components: {
@@ -20,24 +25,9 @@ export default {
     Description,
     WaitingScroll
   },
-  transition: {
-    appear: true,
-    async enter (el, done) {
-      requestAnimationFrame(() => {
-        TweenMax.staggerTo('.fade-in-fade-out-on-page', 1.0, {
-          ease: 'ease',
-          delay: 3.0,
-          startAt: { opacity: 0, y: 5, },
-          opacity: 0.9, y: 0,
-          onComplete() { done() }
-        }, 0.1)
-      });
-    },
-    // NOTE You must implement this function to avoid bug that this component somehow inherits transition function on other page.
-    leave (el, done) {
-      done();
-    },
-  }
+  mixins: [
+    pageTransition1,
+  ],
 }
 </script>
 

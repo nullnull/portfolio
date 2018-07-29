@@ -17,8 +17,7 @@
 import Background from '~/components/pages/about/Background.vue'
 import Description from '~/components/pages/about/Description.vue'
 import WaitingScroll from '~/components/common/WaitingScroll'
-import wipe1 from '~/animations/page_transitions/wipe1'
-import TweenMax from 'gsap'
+import pageTransition1 from '~/mixins/pageTransition1'
 
 export default {
   components: {
@@ -26,26 +25,9 @@ export default {
     Description,
     WaitingScroll
   },
-  transition: {
-    appear: true,
-    async enter (el, done) {
-      requestAnimationFrame(() => {
-        TweenMax.staggerTo('.fade-in-fade-out-on-page', 1.0, {
-          ease: 'ease',
-          delay: 3.0,
-          startAt: { opacity: 0, y: 5, },
-          opacity: 0.9, y: 0,
-          onComplete() { done() }
-        }, 0.1)
-      });
-    },
-    leave (el, done) {
-      requestAnimationFrame(() => {
-        TweenMax.to('#about .fade-in-fade-out-on-page', 1, {opacity: 0});
-      });
-      wipe1(el, done, '#about', this.$router.currentRoute.name);
-    }
-  }
+  mixins: [
+    pageTransition1
+  ],
 }
 </script>
 

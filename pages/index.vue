@@ -21,8 +21,8 @@ import NextPageBackground from '~/components/pages/about/Background'
 import SwitchText from '~/components/pages/index/SwitchText'
 import TitleText from '~/components/pages/index/TitleText'
 import WaitingScroll from '~/components/common/WaitingScroll'
-import wipe1 from '~/animations/page_transitions/wipe1'
-import TweenMax from 'gsap'
+import pageTransition1 from '~/mixins/pageTransition1'
+import fadein1 from '~/animations/page_transitions/fadein1'
 
 export default {
   components: {
@@ -33,25 +33,16 @@ export default {
     WaitingScroll,
   },
   transition: {
+    // override
     appear: true,
     async enter (el, done) {
       await this.$delay(1000);
-      requestAnimationFrame(() => {
-        TweenMax.staggerTo('.fade-in-fade-out-on-page', 1.3, {
-          ease: 'ease',
-          startAt: { opacity: 0, y: 5, },
-          opacity: 0.9, y: 0,
-          onComplete() { done() }
-        }, 1)
-      });
+      fadein1('#index .fade-in-fade-out-on-page', done, 3.0);
     },
-    leave (el, done) {
-      requestAnimationFrame(() => {
-        TweenMax.to('#index .fade-in-fade-out-on-page', 1, {opacity: 0});
-      });
-      wipe1(el, done, '#index', this.$router.currentRoute.name);
-    }
   },
+  mixins: [
+    pageTransition1,
+  ],
 }
 </script>
 
