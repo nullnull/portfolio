@@ -5,6 +5,7 @@ const nextPathToEyecatchTitle = {
   'dena': '2014-2016',
   'univ': '2012-2014',
   'photography': 'PHOTOGRAPHY',
+  'contact': 'CONTACT',
 };
 
 export default function wipe1(el, done, rootIndexSelector, nextPath) {
