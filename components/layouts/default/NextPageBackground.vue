@@ -5,11 +5,13 @@
 <script>
 import indexBackground from '~/components/pages/index/BlackBackground'
 import aboutBackground from '~/components/pages/about/Background'
+import lovegraphBackground from '~/components/pages/lovegraph/Background'
 
 export default {
   components: {
     indexBackground,
     aboutBackground,
+    lovegraphBackground,
   },
   computed: {
     nextPageBackgroundComponent() {

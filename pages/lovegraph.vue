@@ -1,23 +1,17 @@
 <template lang="pug">
 .page-root
-  #about
+  #lovegraph
     Background
     section.center-container
-      Description.fade-in-fade-out-on-page
-    nuxt-link(to="lovegraph")
+      Description
+    nuxt-link(to="/")
       WaitingScroll.fade-in-fade-out-on-page
-    .page-transition-items
-      .wipe1-box1
-      .wipe1-box2
-      .wipe1-box3
-        .wipe1-text1
 </template>
 
 <script>
-import Background from '~/components/pages/about/Background.vue'
-import Description from '~/components/pages/about/Description.vue'
+import Background from '~/components/pages/lovegraph/Background.vue'
+import Description from '~/components/pages/lovegraph/Description.vue'
 import WaitingScroll from '~/components/common/WaitingScroll'
-import wipe1 from '~/animations/page_transitions/wipe1'
 import TweenMax from 'gsap'
 
 export default {
@@ -39,18 +33,16 @@ export default {
         }, 0.1)
       });
     },
+    // NOTE You must implement this function to avoid bug that this component somehow inherits transition function on other page.
     leave (el, done) {
-      requestAnimationFrame(() => {
-        TweenMax.to('#about .fade-in-fade-out-on-page', 1, {opacity: 0});
-      });
-      wipe1(el, done, '#about', this.$router.currentRoute.name);
-    }
+      done();
+    },
   }
 }
 </script>
 
 <style lang="stylus" scoped>
-#about
+#lovegraph
   position relative
   overflow hidden
   z-index 1
