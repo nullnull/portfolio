@@ -30,9 +30,40 @@ export default {
       maxWheelX: 0,
       maxWheelY: 0,
       initialWheelDirection: null,
+      isWheeling: false,
     };
   },
   methods: {
+    checkWheelStopped() {
+      const wheeledAt = Date.now();
+      this.lastWheeledAt = wheeledAt;
+      setTimeout(() => {
+        if (this.lastWheeledAt === wheeledAt) {
+          this.stopWheel();
+        }
+      }, 100)
+    },
+    checkWheeling() {
+      if (this.isWheeling) {
+        return
+      }
+      if (Math.abs(this.maxWheelX) <= 10 && Math.abs(this.maxWheelY) <= 10) {
+        return;
+      }
+
+      // lock 1 sec not to fire event repeatedly.
+      this.isWheeling = true;
+      setTimeout(() => this.isWheeling = false, 1000);
+      if (this.maxWheelX < -10) {
+        this.eventWhenWheelingRight();
+      } else if (this.maxWheelX > 10) {
+        this.eventWhenWheelingLeft();
+      } else if (this.maxWheelY > 10) {
+        this.eventWhenWheelingDown();
+      } else if (this.maxWheelY < -10) {
+        this.eventWhenWheelingUp();
+      }
+    },
     onWheel(e) {
       this.maxWheelX = Math.max(this.maxWheelX, e.deltaX);
       this.maxWheelY = Math.max(this.maxWheelY, e.deltaY);
@@ -42,13 +73,8 @@ export default {
         this.initialWheelDirection = VERTICAL;
       }
 
-      const wheeledAt = Date.now();
-      this.lastWheeledAt = wheeledAt;
-      setTimeout(() => {
-        if (this.lastWheeledAt === wheeledAt) {
-          this.stopWheel();
-        }
-      }, 100)
+      this.checkWheelStopped();
+      this.checkWheeling();
     },
     stopWheel(_e) {
       if (this.maxWheelX < -10) {
@@ -68,6 +94,10 @@ export default {
     },
 
     // please override here
+    eventWhenWheelingRight() {},
+    eventWhenWheelingLeft() {},
+    eventWhenWheelingDown() {},
+    eventWhenWheelingUp() {},
     eventWhenWheeledRight() {},
     eventWhenWheeledLeft() {},
     eventWhenWheeledDown() {},
