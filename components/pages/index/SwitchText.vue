@@ -12,8 +12,8 @@ export default {
   computed: {
     texts() {
       return [
+        'Web App Engineer',
         'Photographer',
-        'Web App Engineer'
       ];
     }
   },
