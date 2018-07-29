@@ -1,5 +1,5 @@
 <template lang="pug">
-  //- scroll handler(see plugins/handleScroll.js)
+  //- scroll handler(see mixins/handleScroll.js)
   div(@touchstart="startTouch($event)" @touchmove.prevent="onTouch($event)" @touchend="stopDrag($event)" @mousedown="startDrag($event)" @mousemove.prevent="onDrag($event)" @mouseup="stopDrag($event)" @wheel="onWheel($event)")
     //- Show page
     nuxt
@@ -12,7 +12,7 @@
 <script>
 import Menu from '~/components/Menu'
 import nextPageBackground from '~/components/layouts/default/nextPageBackground'
-import handleScroll from '~/plugins/handleScroll'
+import handleScroll from '~/mixins/handleScroll'
 
 export default {
   components: {

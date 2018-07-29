@@ -1,5 +1,5 @@
-import draggable from '~/plugins/draggable';
-import wheelable from '~/plugins/wheelable';
+import draggable from '~/mixins/draggable';
+import wheelable from '~/mixins/wheelable';
 
 const currentPathToNextPath = {
   'index': 'about',
