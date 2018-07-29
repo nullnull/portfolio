@@ -1,13 +1,12 @@
-<template>
-  <div @touchstart="startTouch($event)" @touchmove.prevent="onTouch($event)" @touchend="stopDrag($event)" @mousedown="startDrag($event)" @mousemove.prevent="onDrag($event)" @mouseup="stopDrag($event)" @wheel="onWheel($event)">
-    <div class="header">
-    </div>
-    <nuxt/>
-    <component :is="nextPageBackgroundComponent"></component>
-  </div>
+<template lang="pug">
+  div(@touchstart="startTouch($event)" @touchmove.prevent="onTouch($event)" @touchend="stopDrag($event)" @mousedown="startDrag($event)" @mousemove.prevent="onDrag($event)" @mouseup="stopDrag($event)" @wheel="onWheel($event)")
+    nuxt
+    component(:is="nextPageBackgroundComponent")
+    Menu
 </template>
 
 <script>
+import Menu from '~/components/Menu'
 import indexBackground from '~/components/pages/top/BlackBackground'
 import aboutBackground from '~/components/pages/about/Background'
 import draggable from '~/plugins/draggable';
@@ -20,6 +19,7 @@ const currentPathToNextPath = {
 
 export default {
   components: {
+    Menu,
     indexBackground,
     aboutBackground,
   },
@@ -48,6 +48,9 @@ export default {
       this.goNextPage();
     },
     goNextPage() {
+      if (this.$store.state.menuVisibility) {
+        return;  // Do not go to next page when opening menu.
+      }
       const currentPath = this.$router.currentRoute.name;
       const nextPath = currentPathToNextPath[currentPath];
       this.$router.push(nextPath);

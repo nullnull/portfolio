@@ -33,6 +33,10 @@ export default {
         }, 0.1)
       });
     },
+    // NOTE You must implement this function to avoid bug that this component somehow inherits transition function on other page.
+    leave (el, done) {
+      done();
+    },
   }
 }
 </script>
