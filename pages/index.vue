@@ -3,11 +3,11 @@
   #index
     Background
     .center-container
-      TitleText.fade-in-fade-out-on-page
-      SwitchText.fade-in-fade-out-on-page
-      .dummy.fade-in-fade-out-on-page
+      TitleText.fade-in-fast-on-page.fade-out-on-page
+      SwitchText.fade-in-on-page.fade-out-on-page
+      .dummy.fade-in-on-page.fade-out-on-page
     nuxt-link(to="/about")
-      WaitingScroll.fade-in-fade-out-on-page
+      WaitingScroll.fade-in-on-page.fade-out-on-page
     .page-transition-items
       .wipe1-box1
       .wipe1-box2
@@ -21,7 +21,10 @@ import NextPageBackground from '~/components/pages/about/Background'
 import SwitchText from '~/components/pages/index/SwitchText'
 import TitleText from '~/components/pages/index/TitleText'
 import WaitingScroll from '~/components/common/WaitingScroll'
+import pageTransition1 from '~/mixins/pageTransition1'
 import wipe1 from '~/animations/page_transitions/wipe1'
+import fadeout1 from '~/animations/page_transitions/fadeout1'
+import fadein2 from '~/animations/page_transitions/fadein2'
 import TweenMax from 'gsap'
 
 export default {
@@ -33,25 +36,26 @@ export default {
     WaitingScroll,
   },
   transition: {
+    // override
     appear: true,
     async enter (el, done) {
       await this.$delay(1000);
       requestAnimationFrame(() => {
-        TweenMax.staggerTo('.fade-in-fade-out-on-page', 1.3, {
+        TweenMax.to('#index .fade-in-fast-on-page', 1.5, {
           ease: 'ease',
-          startAt: { opacity: 0, y: 5, },
-          opacity: 0.9, y: 0,
-          onComplete() { done() }
-        }, 1)
+          opacity: 0.9
+        })
       });
+      fadein2('#index .fade-in-on-page', done, 2.0);
     },
     leave (el, done) {
-      requestAnimationFrame(() => {
-        TweenMax.to('#index .fade-in-fade-out-on-page', 1, {opacity: 0});
-      });
-      wipe1(el, done, '#index', this.$router.currentRoute.name);
-    }
+      fadeout1(`#index .fade-out-on-page`);
+      wipe1(el, done, `#index`, this.$router.currentRoute.name);
+    },
   },
+  mixins: [
+    pageTransition1,
+  ],
 }
 </script>
 
@@ -72,6 +76,7 @@ export default {
     right 0
     top 0
 
-.fade-in-fade-out-on-page
+.fade-in-on-page,
+.fade-in-fast-on-page
   opacity 0
 </style>

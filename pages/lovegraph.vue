@@ -1,10 +1,10 @@
 <template lang="pug">
 .page-root
-  #about
+  #lovegraph
     Background
-    section.center-container
-      Description.fade-in-fade-out-on-page
-    nuxt-link(to="lovegraph")
+    section.center-container.fade-in-fade-out-on-page
+      Description
+    nuxt-link(to="dena")
       WaitingScroll.fade-in-fade-out-on-page
     .page-transition-items
       .wipe1-box1
@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import Background from '~/components/pages/about/Background.vue'
-import Description from '~/components/pages/about/Description.vue'
+import Background from '~/components/pages/lovegraph/Background.vue'
+import Description from '~/components/pages/lovegraph/Description.vue'
 import WaitingScroll from '~/components/common/WaitingScroll'
 import pageTransition1 from '~/mixins/pageTransition1'
 
@@ -26,13 +26,13 @@ export default {
     WaitingScroll
   },
   mixins: [
-    pageTransition1
+    pageTransition1,
   ],
 }
 </script>
 
 <style lang="stylus" scoped>
-#about
+#lovegraph
   position relative
   overflow hidden
   z-index 1

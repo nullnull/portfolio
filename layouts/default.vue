@@ -11,7 +11,7 @@
 
 <script>
 import Menu from '~/components/Menu'
-import nextPageBackground from '~/components/layouts/default/nextPageBackground'
+import nextPageBackground from '~/components/layouts/default/NextPageBackground'
 import handleScroll from '~/mixins/handleScroll'
 
 export default {
