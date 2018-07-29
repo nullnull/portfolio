@@ -14,11 +14,6 @@ export default {
       });
     }
   },
-  data() {
-    return {
-      currentPage: 'index',
-    }
-  },
   methods: {
     eventWhenDraggedUp() {
       this.goNextPage();
