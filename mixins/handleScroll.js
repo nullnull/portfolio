@@ -1,5 +1,6 @@
 import draggable from '~/mixins/draggable';
 import wheelable from '~/mixins/wheelable';
+import pageHandler from '~/mixins/pageHandler';
 
 const currentPathToNextPath = {
   'index': 'about',
@@ -28,20 +29,10 @@ export default {
     eventWhenWheelingDown() {
       this.goNextPage();
     },
-    goNextPage() {
-      if (this.$store.state.menuVisibility) {
-        return;  // Do not go to next page when opening menu.
-      }
-      const currentPath = this.$router.currentRoute.name;
-      if (currentPath === 'contact') {
-        return;
-      }
-      const nextPath = currentPathToNextPath[currentPath];
-      this.$router.push(nextPath);
-    },
   },
   mixins: [
     draggable,
     wheelable,
+    pageHandler,
   ],
 };

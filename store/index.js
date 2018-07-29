@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 const store = () => new Vuex.Store({
   state: {
     menuVisibility: false,
+    isPageTransitioning: false,
   },
   mutations: {
     hideMenu (state) {
@@ -10,6 +11,12 @@ const store = () => new Vuex.Store({
     },
     showMenu (state) {
       state.menuVisibility = true;
+    },
+    startPageTransition(state) {
+      state.isPageTransitioning = true;
+    },
+    stopPageTransition(state) {
+      state.isPageTransitioning = false;
     },
   }
 })
