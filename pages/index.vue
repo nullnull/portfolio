@@ -74,8 +74,4 @@ export default {
 
 .fade-in-fade-out-on-page
   opacity 0
-
-.next-page
-  opacity 0
-  z-index 0
 </style>
