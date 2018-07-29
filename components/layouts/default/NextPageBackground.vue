@@ -9,6 +9,7 @@ import lovegraphBackground from '~/components/pages/lovegraph/Background'
 import denaBackground from '~/components/pages/dena/Background'
 import univBackground from '~/components/pages/univ/Background'
 import photographyBackground from '~/components/pages/photography/Background'
+import contactBackground from '~/components/pages/contact/Background'
 
 export default {
   components: {
@@ -18,6 +19,7 @@ export default {
     denaBackground,
     univBackground,
     photographyBackground,
+    contactBackground,
   },
   computed: {
     nextPageBackgroundComponent() {

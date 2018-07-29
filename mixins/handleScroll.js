@@ -6,7 +6,9 @@ const currentPathToNextPath = {
   'about': 'lovegraph',
   'lovegraph': 'dena',
   'dena': 'univ',
-  'univ': '/',
+  'univ': 'photography',
+  'photography': 'contact',
+  'contact': '/',
 };
 
 export default {
@@ -29,6 +31,9 @@ export default {
         return;  // Do not go to next page when opening menu.
       }
       const currentPath = this.$router.currentRoute.name;
+      if (currentPath === 'contact') {
+        return;
+      }
       const nextPath = currentPathToNextPath[currentPath];
       this.$router.push(nextPath);
     },
