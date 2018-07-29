@@ -8,7 +8,7 @@
         p.subtitle.description-fade-in
         //-  | 情報科学研究科 乾・岡崎研究室(2012-2014)
         p.item.description-fade-in
-          | フォトグラファーとしても活動中。このサイトで使用している写真は全て自分の写真です。
+          | フォトグラファーとしても活動中。サイトで使用している写真は全て自身の写真。
         p.item.description-fade-in
           | プロフィール写真撮影、カンファレンスカメラマンのご依頼など、お気軽にお問い合わせください。
         p.item.description-fade-in
