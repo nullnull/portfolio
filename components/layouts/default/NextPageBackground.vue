@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import indexBackground from '~/components/pages/top/BlackBackground'
+import indexBackground from '~/components/pages/index/BlackBackground'
 import aboutBackground from '~/components/pages/about/Background'
 
 export default {

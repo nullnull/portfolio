@@ -16,10 +16,10 @@
 </template>
 
 <script>
-import Background from '~/components/pages/top/Background'
+import Background from '~/components/pages/index/Background'
 import NextPageBackground from '~/components/pages/about/Background'
-import SwitchText from '~/components/pages/top/SwitchText'
-import TitleText from '~/components/pages/top/TitleText'
+import SwitchText from '~/components/pages/index/SwitchText'
+import TitleText from '~/components/pages/index/TitleText'
 import WaitingScroll from '~/components/common/WaitingScroll'
 import wipe1 from '~/animations/page_transitions/wipe1'
 import TweenMax from 'gsap'
