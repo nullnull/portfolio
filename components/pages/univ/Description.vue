@@ -4,13 +4,15 @@
       .inner
         p.title.description-fade-in
           span.underline
-            | 株式会社ディー・エヌ・エー
+            | 東北大学大学院
         p.subtitle.description-fade-in
-          | ブラウザゲームエンジニア(2014-2016)
+          | 情報科学研究科 乾・岡崎研究室(2012-2014)
         p.item.description-fade-in
-          | 社内最大規模のブラウザゲームタイトルの運用エンジニアを担当。Perl / MobaSif / MySQL / Backbone.js など。
+          | 論文投稿：査読あり国際会議1本(ACL2013)、査読なし国内会議4本、第二著者として国際会議2本。当時最年少で言語処理のトップカンファレンスに論文を通す。
         p.item.description-fade-in
-          | 開発以外にも企画や分析など幅広く担当。チームの規模は30名程度。
+          | インターンシップ：株式会社Preferred Infrastructure、国立情報学研究所、NaCTeMなどでインターンシップを経験。
+        p.item.description-fade-in
+          | 在学中は競技プログラミングにも取り組む。codebout 準優勝、ACM-ICPC2012アジア予選出場、TOP CODERは青色くらい。
 </template>
 
 <script>

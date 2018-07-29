@@ -7,6 +7,7 @@ import indexBackground from '~/components/pages/index/BlackBackground'
 import aboutBackground from '~/components/pages/about/Background'
 import lovegraphBackground from '~/components/pages/lovegraph/Background'
 import denaBackground from '~/components/pages/dena/Background'
+import univBackground from '~/components/pages/univ/Background'
 
 export default {
   components: {
@@ -14,6 +15,7 @@ export default {
     aboutBackground,
     lovegraphBackground,
     denaBackground,
+    univBackground,
   },
   computed: {
     nextPageBackgroundComponent() {
