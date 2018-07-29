@@ -4,7 +4,8 @@ import wheelable from '~/mixins/wheelable';
 const currentPathToNextPath = {
   'index': 'about',
   'about': 'lovegraph',
-  'lovegraph': '/',
+  'lovegraph': 'dena',
+  'dena': '/',
 };
 
 export default {
