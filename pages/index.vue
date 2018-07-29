@@ -57,7 +57,7 @@ export default {
 
 <style lang="stylus" scoped>
 #index
-  font-family "DIN Next W04","Helvetica Neue",Helvetica,Arial,sans-serif
+  font-family Helvetica,Arial,sans-serif
   position relative
   overflow hidden
   z-index 1
