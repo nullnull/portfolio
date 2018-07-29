@@ -15,15 +15,17 @@ export default {
   created() {
     if (process.browser) {
       window.addEventListener('keyup', (e) => {
-        this.goNextPage();
+        if (e.key === 'ArrowDown') {
+          this.goNextPage();
+        }
       });
     }
   },
   methods: {
-    eventWhenDraggedUp() {
+    eventWhenDraggingUp() {
       this.goNextPage();
     },
-    eventWhenWheeledDown() {
+    eventWhenWheelingDown() {
       this.goNextPage();
     },
     goNextPage() {

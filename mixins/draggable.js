@@ -45,9 +45,31 @@ export default {
       dragStartX: null,
       dragStartY: null,
       initialDragDirection: null,
+      isDragging: false,
     };
   },
   methods: {
+    checkDragging() {
+      if (this.isDragging) {
+        return
+      }
+      if (Math.abs(this.dragLengthX) <= 20 && Math.abs(this.dragLengthY) <= 20) {
+        return;
+      }
+
+      // lock 1 sec not to fire event repeatedly.
+      this.isDragging = true;
+      setTimeout(() => this.isDragging = false, 1000);
+      if (this.dragLengthY > 20) {
+        this.eventWhenDraggingDown();
+      } else if (this.dragLengthY < -20) {
+        this.eventWhenDraggingUp();
+      } else if (this.dragLengthX < -20) {
+        this.eventWhenDraggingRight();
+      } else if (this.dragLengthX > 20) {
+        this.eventWhenDraggingLeft();
+      }
+    },
     onDrag(e) {
       this.draggingX = e.pageX;
       this.draggingY = e.pageY;
@@ -56,6 +78,8 @@ export default {
       } else if (!this.initialDragDirection && Math.abs(this.dragLengthY) > 10) {
         this.initialDragDirection = VERTICAL;
       }
+
+      this.checkDragging();
     },
     onTouch(e) {
       this.draggingX = e.changedTouches[0].pageX;
@@ -65,6 +89,8 @@ export default {
       } else if (!this.initialDragDirection && Math.abs(this.dragLengthY) > 10) {
         this.initialDragDirection = VERTICAL;
       }
+
+      this.checkDragging();
     },
     startDrag(e) {
       this.dragStartX = e.pageX;
@@ -99,6 +125,10 @@ export default {
     },
 
     // please override here
+    eventWhenDraggingRight() {},
+    eventWhenDraggingLeft() {},
+    eventWhenDraggingDown() {},
+    eventWhenDraggingUp() {},
     eventWhenDraggedRight() {},
     eventWhenDraggedLeft() {},
     eventWhenDraggedDown() {},
