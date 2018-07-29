@@ -12,7 +12,6 @@ export default function wipe1(el, done, rootIndexSelector, nextPath) {
       TweenMax.to('.wipe1-text1', 0.1, {opacity: 1, delay: 0.2});
     }});
     TweenMax.to('.wipe1-box3', 0.8, {height: '100%', delay: 0.6 });
-    TweenMax.set('.next-page', { 'opacity': 1 });
     TweenMax.to(rootIndexSelector, 1, {height: '0%', delay: 2.5, onComplete() {
       done()
     }});

@@ -26,7 +26,7 @@
 .preloader-nav
   -webkit-font-smoothing antialiased
   bottom 40px
-  font-family "ff-tisa-web-pro",serif
+  font-family serif
   font-size 12px
   font-style italic
   font-weight 50

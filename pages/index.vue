@@ -16,10 +16,10 @@
 </template>
 
 <script>
-import Background from '~/components/pages/top/Background'
+import Background from '~/components/pages/index/Background'
 import NextPageBackground from '~/components/pages/about/Background'
-import SwitchText from '~/components/pages/top/SwitchText'
-import TitleText from '~/components/pages/top/TitleText'
+import SwitchText from '~/components/pages/index/SwitchText'
+import TitleText from '~/components/pages/index/TitleText'
 import WaitingScroll from '~/components/common/WaitingScroll'
 import wipe1 from '~/animations/page_transitions/wipe1'
 import TweenMax from 'gsap'
@@ -57,7 +57,7 @@ export default {
 
 <style lang="stylus" scoped>
 #index
-  font-family "DIN Next W04","Helvetica Neue",Helvetica,Arial,sans-serif
+  font-family Helvetica,Arial,sans-serif
   position relative
   overflow hidden
   z-index 1
@@ -74,8 +74,4 @@ export default {
 
 .fade-in-fade-out-on-page
   opacity 0
-
-.next-page
-  opacity 0
-  z-index 0
 </style>

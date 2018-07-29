@@ -1,69 +1,26 @@
 <template lang="pug">
+  //- scroll handler(see mixins/handleScroll.js)
   div(@touchstart="startTouch($event)" @touchmove.prevent="onTouch($event)" @touchend="stopDrag($event)" @mousedown="startDrag($event)" @mousemove.prevent="onDrag($event)" @mouseup="stopDrag($event)" @wheel="onWheel($event)")
+    //- Show page
     nuxt
-    component(:is="nextPageBackgroundComponent")
+    //- Show next page background image for wipe animation
+    nextPageBackground
+    //- Show menu bar
     Menu
 </template>
 
 <script>
 import Menu from '~/components/Menu'
-import indexBackground from '~/components/pages/top/BlackBackground'
-import aboutBackground from '~/components/pages/about/Background'
-import draggable from '~/plugins/draggable';
-import wheelable from '~/plugins/wheelable';
-
-const currentPathToNextPath = {
-  'index': 'about',
-  'about': '/',
-};
+import nextPageBackground from '~/components/layouts/default/nextPageBackground'
+import handleScroll from '~/mixins/handleScroll'
 
 export default {
   components: {
     Menu,
-    indexBackground,
-    aboutBackground,
-  },
-  computed: {
-    nextPageBackgroundComponent() {
-      return this.currentPage + 'Background';
-    }
-  },
-  created() {
-    if (process.browser) {
-      window.addEventListener('keyup', (e) => {
-        this.goNextPage();
-      });
-    }
-  },
-  data() {
-    return {
-      currentPage: 'index',
-    }
-  },
-  methods: {
-    eventWhenDraggedUp() {
-      this.goNextPage();
-    },
-    eventWhenWheeledDown() {
-      this.goNextPage();
-    },
-    goNextPage() {
-      if (this.$store.state.menuVisibility) {
-        return;  // Do not go to next page when opening menu.
-      }
-      const currentPath = this.$router.currentRoute.name;
-      const nextPath = currentPathToNextPath[currentPath];
-      this.$router.push(nextPath);
-    },
+    nextPageBackground,
   },
   mixins: [
-    draggable,
-    wheelable,
+    handleScroll
   ],
-  watch: {
-    '$route' (to, from) {
-      this.currentPage = to.name;
-    }
-  },
 }
 </script>
