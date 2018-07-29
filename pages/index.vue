@@ -3,11 +3,11 @@
   #index
     Background
     .center-container
-      TitleText.fade-in-fade-out-fast-on-page
-      SwitchText.fade-in-fade-out-on-page
-      .dummy.fade-in-fade-out-on-page
+      TitleText.fade-in-fast-on-page.fade-out-on-page
+      SwitchText.fade-in-on-page.fade-out-on-page
+      .dummy.fade-in-on-page.fade-out-on-page
     nuxt-link(to="/about")
-      WaitingScroll.fade-in-fade-out-on-page
+      WaitingScroll.fade-in-on-page.fade-out-on-page
     .page-transition-items
       .wipe1-box1
       .wipe1-box2
@@ -22,6 +22,8 @@ import SwitchText from '~/components/pages/index/SwitchText'
 import TitleText from '~/components/pages/index/TitleText'
 import WaitingScroll from '~/components/common/WaitingScroll'
 import pageTransition1 from '~/mixins/pageTransition1'
+import wipe1 from '~/animations/page_transitions/wipe1'
+import fadeout1 from '~/animations/page_transitions/fadeout1'
 import fadein2 from '~/animations/page_transitions/fadein2'
 import TweenMax from 'gsap'
 
@@ -39,12 +41,16 @@ export default {
     async enter (el, done) {
       await this.$delay(1000);
       requestAnimationFrame(() => {
-        TweenMax.to('#index .fade-in-fade-out-fast-on-page', 1.5, {
+        TweenMax.to('#index .fade-in-fast-on-page', 1.5, {
           ease: 'ease',
           opacity: 0.9
         })
       });
-      fadein2('#index .fade-in-fade-out-on-page', done, 2.0);
+      fadein2('#index .fade-in-on-page', done, 2.0);
+    },
+    leave (el, done) {
+      fadeout1(`#index .fade-out-on-page`);
+      wipe1(el, done, `#index`, this.$router.currentRoute.name);
     },
   },
   mixins: [
@@ -70,7 +76,7 @@ export default {
     right 0
     top 0
 
-.fade-in-fade-out-on-page,
-.fade-in-fade-out-fast-on-page
+.fade-in-on-page,
+.fade-in-fast-on-page
   opacity 0
 </style>

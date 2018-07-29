@@ -5,7 +5,8 @@ const currentPathToNextPath = {
   'index': 'about',
   'about': 'lovegraph',
   'lovegraph': 'dena',
-  'dena': '/',
+  'dena': 'univ',
+  'univ': '/',
 };
 
 export default {
