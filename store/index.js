@@ -4,6 +4,8 @@ const store = () => new Vuex.Store({
   state: {
     menuVisibility: false,
     isPageTransitioning: false,
+    numberOfLoadedImage: 0,
+    allImageLoaded: false,
   },
   mutations: {
     hideMenu (state) {
@@ -17,6 +19,12 @@ const store = () => new Vuex.Store({
     },
     stopPageTransition(state) {
       state.isPageTransitioning = false;
+    },
+    incrementNumberOfLoadedImage(state) {
+      state.numberOfLoadedImage++;
+    },
+    loadedAllImage(state) {
+      state.allImageLoaded = true;
     },
   }
 })
