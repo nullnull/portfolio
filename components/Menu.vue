@@ -94,9 +94,9 @@ i
   height 300px
 
 p
-  font-family Helvetica,Arial,sans-serif
+  font-family 'Poppins', sans-serif
   font-size 20px
-  font-weight 100
+  font-weight 200
   letter-spacing 10px
   margin auto
   text-transform uppercase

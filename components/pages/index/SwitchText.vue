@@ -69,8 +69,10 @@ export default {
 <style lang="stylus" scoped>
 .root
   font-size 15px
-  font-weight 200
+  font-family 'Poppins', sans-serif
+  font-weight 100
   line-height: 1.5em
+  letter-spacing 3px
   padding-bottom 15px
   position relative
   word-spacing 0px

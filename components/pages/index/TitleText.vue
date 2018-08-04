@@ -1,17 +1,17 @@
 <template lang="pug">
   .root
     span
-      | katsuma narisawa
+      | Katsuma Narisawa
 </template>
 
 <style lang="stylus" scoped>
 span
   display block
-  text-transform uppercase
-  font-size 20px
-  letter-spacing 4px
+  font-size 30px
+  font-family 'League Script', cursive
+  letter-spacing 2px
   text-align center
   position relative
-  font-weight 300
+  font-weight 500
   padding-bottom 15px
 </style>

@@ -26,10 +26,10 @@
 .preloader-nav
   -webkit-font-smoothing antialiased
   bottom 40px
-  font-family serif
+  font-family 'Poppins', sans-serif
   font-size 12px
   font-style italic
-  font-weight 50
+  font-weight 300
   left 0
   line-height: 26px
   margin 0 auto
