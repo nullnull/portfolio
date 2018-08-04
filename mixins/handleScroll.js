@@ -29,6 +29,9 @@ export default {
     eventWhenWheelingDown() {
       this.goNextPage();
     },
+    eventWhenWheelingUp() {
+      this.goNextPage();
+    },
   },
   mixins: [
     draggable,

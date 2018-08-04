@@ -29,6 +29,8 @@ export default {
       lastWheeledAt: 0,
       maxWheelX: 0,
       maxWheelY: 0,
+      minWheelX: 0,
+      minWheelY: 0,
       initialWheelDirection: null,
       isWheeling: false,
     };
@@ -47,29 +49,34 @@ export default {
       if (this.isWheeling) {
         return
       }
-      if (Math.abs(this.maxWheelX) <= 10 && Math.abs(this.maxWheelY) <= 10) {
+      if (this.maxWheelX <= 10  && this.minWheelX >= -10 && this.maxWheelY <= 10 && this.minWheelY >= -10) {
         return;
       }
 
       // lock 1 sec not to fire event repeatedly.
       this.isWheeling = true;
       setTimeout(() => this.isWheeling = false, 1000);
-      if (this.maxWheelX < -10) {
+      if (this.minWheelX < -10) {
         this.eventWhenWheelingRight();
-      } else if (this.maxWheelX > 10) {
+      }
+      if (this.maxWheelX > 10) {
         this.eventWhenWheelingLeft();
-      } else if (this.maxWheelY > 10) {
+      }
+      if (this.maxWheelY > 10) {
         this.eventWhenWheelingDown();
-      } else if (this.maxWheelY < -10) {
+      }
+      if (this.minWheelY < -10) {
         this.eventWhenWheelingUp();
       }
     },
     onWheel(e) {
       this.maxWheelX = Math.max(this.maxWheelX, e.deltaX);
       this.maxWheelY = Math.max(this.maxWheelY, e.deltaY);
-      if (!this.initialWheelDirection && Math.abs(this.maxWheelX) > 3) {
+      this.minWheelX = Math.min(this.minWheelX, e.deltaX);
+      this.minWheelY = Math.min(this.minWheelY, e.deltaY);
+      if (!this.initialWheelDirection && (this.maxWheelX > 3 || this.minWheelX < -3)) {
         this.initialWheelDirection = HORIZONTAL;
-      } else if (!this.initialWheelDirection && Math.abs(this.maxWheelY) > 3) {
+      } else if (!this.initialWheelDirection && (this.maxWheelY > 3 || this.minWheelY < -3)) {
         this.initialWheelDirection = VERTICAL;
       }
 
