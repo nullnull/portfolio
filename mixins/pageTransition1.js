@@ -8,7 +8,7 @@ export default {
     appear: true,
     async enter (el, done) {
       const pageId = document.querySelector('.page-root').children[0].id;
-      fadein1(`#${pageId} .fade-in-fade-out-on-page`, done, 0.5);
+      fadein1(`#${pageId} .fade-in-fade-out-on-page`, done, 0.4);
     },
     leave (el, done) {
       const pageId = document.querySelector('.page-root').children[0].id;

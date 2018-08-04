@@ -1,23 +1,26 @@
 const nextPathToEyecatchTitle = {
   'index': 'TOP',
-  'about': 'ABOUT ME',
+  'about': 'About Me',
   'lovegraph': '2016-2018',
   'dena': '2014-2016',
   'univ': '2012-2014',
-  'photography': 'PHOTOGRAPHY',
-  'contact': 'CONTACT',
+  'photography': 'Photography',
+  'contact': 'Contact',
 };
 
 export default function wipe1(el, done, rootIndexSelector, nextPath) {
   requestAnimationFrame(() => {
-    TweenMax.to('.wipe1-box1', 0.8, {height: '100%'});
-    TweenMax.to('.wipe1-box2', 0.8, {height: '100%', delay: 0.3, onComplete() {
+    const wipeDuration = 0.7;
+    const wipeInterval = 0.1;
+    const eyecatchDuration = 1.8;
+    TweenMax.to('.wipe1-box1', wipeDuration, {height: '100%'});
+    TweenMax.to('.wipe1-box2', wipeDuration, {height: '100%', delay: wipeInterval, onComplete() {
       document.querySelector(".wipe1-text1").textContent = nextPathToEyecatchTitle[nextPath];
       TweenMax.set('.wipe1-text1', { 'top': window.innerHeight / 2 - 30 });
-      TweenMax.to('.wipe1-text1', 0.1, {opacity: 1, delay: 0.2});
+      TweenMax.to('.wipe1-text1', 0.1, {opacity: 1, delay: wipeInterval});
     }});
-    TweenMax.to('.wipe1-box3', 0.8, {height: '100%', delay: 0.6 });
-    TweenMax.to(rootIndexSelector, 1, {height: '0%', delay: 2.5, onComplete() {
+    TweenMax.to('.wipe1-box3', wipeDuration, {height: '100%', delay: wipeInterval * 3 });
+    TweenMax.to(rootIndexSelector, wipeDuration, {height: '0%', delay: wipeInterval * 3 + eyecatchDuration, onComplete() {
       done()
     }});
   });
