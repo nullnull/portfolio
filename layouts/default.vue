@@ -1,7 +1,7 @@
 <template lang="pug">
   //- scroll handler(see mixins/handleScroll.js)
   div(@touchstart="startTouch($event)" @touchmove.prevent="onTouch($event)" @touchend="stopDrag($event)" @mousedown="startDrag($event)" @mousemove.prevent="onDrag($event)" @mouseup="stopDrag($event)" @wheel="onWheel($event)")
-    div(v-show='allAssetsLoaded')
+    div(v-if='allAssetsLoaded')
       //- Show page
       nuxt
       //- Show next page background image for wipe animation
@@ -9,7 +9,7 @@
       //- Show menu bar
       Menu
     transition(name='fade')
-      div(v-show='!allAssetsLoaded')
+      div(v-if='!allAssetsLoaded')
         Loading
 </template>
 
