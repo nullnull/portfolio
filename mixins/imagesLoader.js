@@ -15,7 +15,7 @@ import sunset_sp from '~/assets/images/sunset_sp.jpg'
 import univ4 from '~/assets/images/univ4.jpg'
 
 
-const imagePaths = [
+const imageUrls = [
   dena1,
   dish,
   lovegraph3,
@@ -35,24 +35,24 @@ const imagePaths = [
 
 export default {
   computed: {
-    allImageLoaded() {
-      return this.$store.state.numberOfLoadedImage === imagePaths.length;
+    allImagesLoaded() {
+      return this.numberOfLoadedImages === imageUrls.length;
     },
+  },
+  data() {
+    return {
+      numberOfLoadedImages: 0,
+    };
   },
   methods: {
     loadImage() {
-      imagePaths.forEach(imagePath => {
+      imageUrls.forEach(imageUrl => {
         const img = new Image()
         img.onload = () => {
-          this.$store.commit('incrementNumberOfLoadedImage');
+          this.numberOfLoadedImages += 1;
         }
-        img.src = imagePath;
+        img.src = imageUrl;
       });
     },
   },
-  watch: {
-    allImageLoaded() {
-      this.$store.commit('loadedAllImage');
-    },
-  }
 }
