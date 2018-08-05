@@ -16,11 +16,11 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'portfolio',
+    title: "Katsuma Narisawa",
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
+      { hid: 'description', name: 'description', content: "Web App Engineer katsuma Narisawa / Webメインのエンジニア 成澤克麻の個人ページ。Webサービス開発全般、自然言語処理などの開発案件を引き受けています。ポートレートを中心とした撮影案件のお問い合わせもお気軽にどうぞ。" }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
