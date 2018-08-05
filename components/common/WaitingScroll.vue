@@ -37,12 +37,15 @@
   right 0
   width 200px
 
+span
+  color rgba(255, 255, 255, 0.7)
+
 @keyframes { touch-dot }
   0%
     opacity 0
     transform translateY(10px)
   30%
-    opacity 0.8
+    opacity 0.7
   50%
     transform translateY(25px)
   100%
