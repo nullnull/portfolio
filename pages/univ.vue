@@ -4,7 +4,7 @@
     Background
     section.center-container.fade-in-fade-out-on-page
       Description
-    nuxt-link(to="photography")
+    nuxt-link(to="/photography")
       WaitingScroll.fade-in-fade-out-on-page
     .page-transition-items
       .wipe1-box1

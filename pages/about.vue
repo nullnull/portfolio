@@ -4,7 +4,7 @@
     Background
     section.center-container
       Description.fade-in-fade-out-on-page
-    nuxt-link(to="lovegraph")
+    nuxt-link(to="/lovegraph")
       WaitingScroll.fade-in-fade-out-on-page
     .page-transition-items
       .wipe1-box1
