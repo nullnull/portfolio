@@ -1,6 +1,7 @@
-# portfolio
+# Katsuma Narisawa's portfolio
+http://katsumanarisawa.me/
 
-> Nuxt.js project
+by Nuxt.js :tada:
 
 ## Build Setup
 
