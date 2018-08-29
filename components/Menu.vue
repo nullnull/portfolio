@@ -4,10 +4,14 @@
       .inner
         p.fade-in-on-menu(@click="goPage('/')")
           | top
-        p.fade-in-on-menu(@click="goPage('about')")
+        p.fade-in-on-menu(@click="goPage('/about')")
           | about me
-        p.fade-in-on-menu
+        p.fade-in-on-menu(@click="goPage('/lovegraph')")
           | history
+        p.fade-in-on-menu(@click="goPage('/photography')")
+          | photography
+        p.fade-in-on-menu(@click="goPage('/contact')")
+          | contact
     .button(@click='toggleMenu')
       MenuButton(':isMenuVisible'='menuVisibility')
 </template>
