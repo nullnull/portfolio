@@ -4,18 +4,26 @@
       .inner
         p.fade-in-on-menu(@click="goPage('/')")
           | top
-        p.fade-in-on-menu(@click="goPage('about')")
+        p.fade-in-on-menu(@click="goPage('/about')")
           | about me
-        p.fade-in-on-menu
+        p.fade-in-on-menu(@click="goPage('/lovegraph')")
           | history
-    .menu-button
-      i.bar.fas.fa-bars(@click='toggleMenu' ":class"="{'bar-when-visible': menuVisibility}")
+        p.fade-in-on-menu(@click="goPage('/photography')")
+          | photography
+        p.fade-in-on-menu(@click="goPage('/contact')")
+          | contact
+    #menu-button.button(@click='toggleMenu')
+      MenuButton(':isMenuVisible'='menuVisibility')
 </template>
 
 <script>
 import {TweenMax} from 'gsap'
+import MenuButton from '~/components/MenuButton'
 
 export default {
+  components: {
+    MenuButton,
+  },
   computed: {
     menuVisibility() {
       return this.$store.state.menuVisibility;
@@ -71,13 +79,10 @@ export default {
   height 50px
   width 100%
 
-i
+#menu-button
   position absolute
-  top 10px
-  right 15px
-  font-size 30px
-  opacity 0.6
-  cursor pointer
+  top 0
+  right 0
 
 .menu
   position relative
@@ -112,10 +117,4 @@ p:hover
 
 .fade-in-on-menu
   opacity 0
-
-.bar
-  transition transform 1.0s
-
-.bar-when-visible
-  transform translateX(50px)
 </style>
