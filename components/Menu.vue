@@ -79,13 +79,10 @@ export default {
   height 50px
   width 100%
 
-i
+#menu-button
   position absolute
-  top 10px
-  right 15px
-  font-size 30px
-  opacity 0.6
-  cursor pointer
+  top 0
+  right 0
 
 .menu
   position relative
