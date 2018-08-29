@@ -8,14 +8,18 @@
           | about me
         p.fade-in-on-menu
           | history
-    .menu-button
-      i.bar.fas.fa-bars(@click='toggleMenu' ":class"="{'bar-when-visible': menuVisibility}")
+    .button(@click='toggleMenu')
+      MenuButton(':isMenuVisible'='menuVisibility')
 </template>
 
 <script>
 import {TweenMax} from 'gsap'
+import MenuButton from '~/components/MenuButton'
 
 export default {
+  components: {
+    MenuButton,
+  },
   computed: {
     menuVisibility() {
       return this.$store.state.menuVisibility;
@@ -112,10 +116,4 @@ p:hover
 
 .fade-in-on-menu
   opacity 0
-
-.bar
-  transition transform 1.0s
-
-.bar-when-visible
-  transform translateX(50px)
 </style>
