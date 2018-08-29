@@ -12,7 +12,7 @@
           | photography
         p.fade-in-on-menu(@click="goPage('/contact')")
           | contact
-    .button(@click='toggleMenu')
+    #menu-button.button(@click='toggleMenu')
       MenuButton(':isMenuVisible'='menuVisibility')
 </template>
 
