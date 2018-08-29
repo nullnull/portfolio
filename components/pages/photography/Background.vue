@@ -1,20 +1,17 @@
 <template lang="pug">
   .root
     transition-group(name='fade')
-      img(src='~/assets/images/sakura_hikari.jpg' v-show='currentIndex === 0' key=0)
-      img(src='~/assets/images/sakura_non.jpg' v-show='currentIndex === 1' key=1)
-      img(src='~/assets/images/lovegraph4.jpg' v-show='currentIndex === 2' key=2)
-      img(src='~/assets/images/rubykaigi2018_b.jpg' v-show='currentIndex === 3' key=3)
-      img(src='~/assets/images/dish.jpg' v-show='currentIndex === 4' key=4)
-      img(src='~/assets/images/rubykaigi2018_c.jpg' v-show='currentIndex === 5' key=5)
-      img(src='~/assets/images/profile_sample.jpg' v-show='currentIndex === 6' key=6)
+      img(src='~/assets/images/rubykaigi2018_b.jpg' v-show='currentIndex === 0' key=0)
 </template>
 
 <script>
-const NUMBER_OF_IMAGES = 7;
+const NUMBER_OF_IMAGES = 1;
 
 export default {
   async created() {
+    if (NUMBER_OF_IMAGES == 1) {
+      return;
+    }
     setInterval(() => {
       this.currentIndex = (this.currentIndex + 1) % NUMBER_OF_IMAGES;
     }, 4000);
