@@ -44,7 +44,7 @@ export default {
           ease: 'ease',
           startAt: { opacity: 0, y: 10, },
           opacity: 0.7, y: 0,
-        }, 0.2)
+        }, 0.1)
       });
     },
     async hideMenu() {
