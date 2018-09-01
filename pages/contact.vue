@@ -35,8 +35,8 @@ export default {
 
   .center-container
     bottom 0
-    height 60%
     left 0
+    height 420px
     margin auto
     position absolute
     right 0

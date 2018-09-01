@@ -97,9 +97,10 @@ export default {
   right 0
   margin auto
   width 100%
-  height 300px
+  height 480px
 
 p
+  cursor pointer
   font-family 'Poppins', sans-serif
   font-size 20px
   font-weight 200
@@ -107,7 +108,7 @@ p
   margin auto
   text-transform uppercase
   line-height 3em
-  transition letter-spacing 0.6s
+  transition letter-spacing 0.3s
   opacity 0.5
   transform translateY(0px)
 

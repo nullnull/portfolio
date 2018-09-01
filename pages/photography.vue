@@ -40,7 +40,6 @@ export default {
 
   .center-container
     bottom 0
-    height 60%
     left 0
     margin auto
     position absolute
