@@ -1,10 +1,7 @@
 <template lang="pug">
   .root.fade-in-on-background(:style="style")
     transition(appear @enter='enter')
-      template(v-if='isSp()')
-        img(src='~/assets/images/sunset_sp.jpg')
-      template(v-else)
-        img(src='~/assets/images/sunset.jpg')
+      img(src='~/assets/images/sunset.jpg')
 </template>
 
 <script>
