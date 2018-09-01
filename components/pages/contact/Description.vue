@@ -6,7 +6,7 @@
           p.title.description-fade-in
             | More Detail
           p.item.description-fade-in
-            a(href='resume.pdf' target='_blank')
+            a(href='resume201809.pdf' target='_blank')
               i.fas.fa-chevron-right
               |  resume(pdf)
         .contact
