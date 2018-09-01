@@ -1,10 +1,10 @@
 const currentPathToNextPath = {
-  'index': 'about',
-  'about': 'lovegraph',
-  'lovegraph': 'dena',
-  'dena': 'univ',
-  'univ': 'photography',
-  'photography': 'contact',
+  'index': '/about',
+  'about': '/lovegraph',
+  'lovegraph': '/dena',
+  'dena': '/univ',
+  'univ': '/photography',
+  'photography': '/contact',
   'contact': '/',
 };
 

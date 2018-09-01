@@ -2,16 +2,6 @@ import draggable from '~/mixins/draggable';
 import wheelable from '~/mixins/wheelable';
 import pageHandler from '~/mixins/pageHandler';
 
-const currentPathToNextPath = {
-  'index': '/about',
-  'about': '/lovegraph',
-  'lovegraph': '/dena',
-  'dena': '/univ',
-  'univ': '/photography',
-  'photography': '/contact',
-  'contact': '/',
-};
-
 export default {
   created() {
     if (process.browser) {
