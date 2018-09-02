@@ -16,15 +16,13 @@ img
 
 .symbol
   img
-    padding-bottom 20px
-    width 20%
-    +pc-only()
-      width 6%
+    max-width 17%
+    padding-bottom 12px
+    width 60px
 
 .name
   img
+    max-width 90%
     padding-bottom 20px
-    width 70%
-    +pc-only()
-      width 20%
+    width  300px
 </style>
