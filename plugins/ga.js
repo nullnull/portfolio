@@ -15,7 +15,7 @@ export default ({ app }) => {
   /*
   ** 現在のページをセット
   */
-  ga('create', process.env.GOOGLE_ANALYTICS_TRACKING_ID, 'auto')
+  ga('create', "UA-125042198-1", 'auto')
   /*
   ** ルートが変更されるたびに毎回実行（初期化も実行される）
   */
