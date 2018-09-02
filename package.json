@@ -13,6 +13,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@nuxtjs/dotenv": "^1.1.1",
     "gsap": "^1.20.4",
     "nuxt": "^1.0.0",
     "nuxt-stylus-resources-loader": "^1.1.3",

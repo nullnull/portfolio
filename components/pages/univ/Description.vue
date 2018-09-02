@@ -60,6 +60,7 @@ span.underline
 .subtitle
   font-size 12px
   padding-bottom 2em
+  padding-top 5px
 
 .item
   font-size 12px

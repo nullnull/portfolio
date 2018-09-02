@@ -5,12 +5,14 @@ module.exports = {
     '@/animations/menu.styl',
   ],
   plugins: [
-    '@/plugins/mixin'
+    '@/plugins/mixin',
+    { src: '@/plugins/ga.js', ssr: false },
   ],
   modules: [
     ['nuxt-stylus-resources-loader', [
         __dirname + '/assets/css/mixin.styl',
     ]],
+    '@nuxtjs/dotenv',
   ],
   /*
   ** Headers of the page
