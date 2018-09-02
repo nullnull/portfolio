@@ -20,7 +20,7 @@ export default {
       this.goPrevPage();
     },
     eventWhenWheelingDown() {
-      this.goNextPage();
+      this.goNextPage(); // see https://github.com/nullnull/portfolio/pull/21
     },
     eventWhenWheelingUp() {
       this.goNextPage();
