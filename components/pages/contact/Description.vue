@@ -20,7 +20,7 @@
               i.fab.fa-github
             a(href='https://twitter.com/KatsumaNarisawa' target='_blank')
               i.fab.fa-twitter
-            a(href='https://t.co/p3r2DqfOAZ' target='_blank')
+            a(href='https://www.instagram.com/null_ig_/' target='_blank')
               i.fab.fa-instagram
         .thanks
           p.item.description-fade-in
