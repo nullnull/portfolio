@@ -106,6 +106,12 @@ span.underline
   p
     font-size 0.5em
 
+a
+  transition color 0.4s
+
+a:hover
+  color #75c8ce
+
 .description-fade-in
   opacity 0
 </style>

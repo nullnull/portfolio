@@ -108,12 +108,13 @@ p
   margin auto
   text-transform uppercase
   line-height 3em
-  transition letter-spacing 0.3s
+  transition all 0.3s
   opacity 0.5
   transform translateY(0px)
 
 p:hover
-  letter-spacing 15px
+  color #75c8ce
+  letter-spacing 11px
   opacity 1.0
   transform translateY(-10px)
 
