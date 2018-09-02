@@ -23,7 +23,13 @@ module.exports = {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: "Web App Engineer Katsuma Narisawa / Webエンジニア 成澤克麻の個人ページ。Webサービス開発全般/自然言語処理などの開発案件、またポートレートを中心とした撮影案件を引き受けています。お問い合わせはお気軽にどうぞ。" },
-      { name: 'og:image', content: 'https://katsumanarisawa.netlify.com/ogp.jpg' }
+      { name: 'og:image', content: 'https://katsumanarisawa.netlify.com/ogp.jpg' },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:site", content: "@KatsumaNarisawa" },
+      { property: "og:url", content: "https://katsumanarisawa.me/" },
+      { property: "og:title", content: "Katsuma Narisawa" },
+      { property: "og:description", content: "Web App Engineer Katsuma Narisawa / Webエンジニア 成澤克麻の個人ページ。Webサービス開発全般/自然言語処理などの開発案件、またポートレートを中心とした撮影案件を引き受けています。お問い合わせはお気軽にどうぞ。" },
+      { property: "og:image", content: "https://katsumanarisawa.netlify.com/ogp.jpg" },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
