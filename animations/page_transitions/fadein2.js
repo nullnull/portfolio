@@ -1,6 +1,6 @@
 import TweenMax from 'gsap'
 
-export default function fadein1(selector, done, delay) {
+export default function fadein2(selector, done, delay) {
   requestAnimationFrame(() => {
     TweenMax.staggerTo(selector, 0.8, {
       ease: 'ease',
@@ -11,7 +11,7 @@ export default function fadein1(selector, done, delay) {
     }, 0.8);
     TweenMax.to("#menu-button", 1.0, {
       ease: 'ease',
-      delay: delay + 2.0,
+      delay: delay + 1.0,
       startAt: { opacity: 0, y: 10, },
       opacity: 0.7, y: 0,
       onComplete() { done() }

@@ -21,7 +21,7 @@ export default {
     await this.$delay(2000);
     setInterval(() => {
       this.currentIndex = (this.currentIndex + 1) % this.texts.length;
-    }, 4000);
+    }, 5000);
   },
   data() {
     return {
@@ -33,12 +33,12 @@ export default {
       TweenMax.set(el, { opacity: 0 });
       await this.$delay(1100);
       requestAnimationFrame(() => {
-        TweenMax.to(el, 1.3, {
+        TweenMax.to(el, 0.8, {
           opacity: 1,
-          x: 0,
+          y: 0,
           startAt: {
             opacity: 0,
-            x: -10,
+            y: 5,
           },
           onComplete() {
             done();
@@ -49,12 +49,12 @@ export default {
     async myLeave(el, done) {
       TweenMax.set(el, { opacity: 1 });
       requestAnimationFrame(() => {
-        TweenMax.to(el, 1.3, {
+        TweenMax.to(el, 0.8, {
           opacity: 0,
-          x: 10,
+          y: 5,
           startAt: {
             opacity: 1,
-            x: 0,
+            y: 0,
           },
           onComplete() {
             done();
