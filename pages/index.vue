@@ -46,7 +46,7 @@ export default {
           opacity: 0.9
         })
       });
-      await this.$delay(500);
+      await this.$delay(1000);
       fadein2('#index .fade-in-on-page', done, 2.0);
     },
     leave (el, done) {
