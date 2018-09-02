@@ -16,8 +16,11 @@ export default {
     eventWhenDraggingUp() {
       this.goNextPage();
     },
+    eventWhenDraggingDown() {
+      this.goPrevPage();
+    },
     eventWhenWheelingDown() {
-      this.goNextPage();
+      this.goNextPage(); // see https://github.com/nullnull/portfolio/pull/21
     },
     eventWhenWheelingUp() {
       this.goNextPage();
