@@ -47,6 +47,7 @@ export default {
 
 <style lang="stylus" scoped>
 .root
+  font-family 'Poppins', sans-serif
   letter-spacing 3px
   text-align left
   padding 0 5px
@@ -56,10 +57,10 @@ export default {
   position relative
   text-align center
   border solid 2px white
-  max-width 300px
+  max-width 420px
   margin auto
   +pc-only()
-    padding 0 15%
+    padding 0 10%
 
 .more
   padding-top 20px

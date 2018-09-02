@@ -1,11 +1,11 @@
 const nextPathToEyecatchTitle = {
   'index': 'TOP',
-  'about': 'About Me',
+  'about': 'ABOUT ME',
   'lovegraph': '2016-2018',
   'dena': '2014-2016',
   'univ': '2012-2014',
-  'photography': 'Photography',
-  'contact': 'Contact',
+  'photography': 'PHOTOGRAPHY',
+  'contact': 'CONTACT',
 };
 
 export default function wipe1(el, done, rootIndexSelector, nextPath) {
