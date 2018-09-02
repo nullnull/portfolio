@@ -3,8 +3,8 @@
   #index
     Background
     .center-container
-      TitleText.fade-in-fast-on-page.fade-out-on-page
-      SwitchText.fade-in-on-page.fade-out-on-page
+      TitleLogo.fade-in-fast-on-page.fade-out-on-page
+      // SwitchText.fade-in-on-page.fade-out-on-page
       .dummy.fade-in-on-page.fade-out-on-page
     nuxt-link(to="/about")
       WaitingScroll.fade-in-on-page.fade-out-on-page
@@ -19,7 +19,7 @@
 import Background from '~/components/pages/index/Background'
 import NextPageBackground from '~/components/pages/about/Background'
 import SwitchText from '~/components/pages/index/SwitchText'
-import TitleText from '~/components/pages/index/TitleText'
+import TitleLogo from '~/components/pages/index/TitleLogo'
 import WaitingScroll from '~/components/common/WaitingScroll'
 import pageTransition1 from '~/mixins/pageTransition1'
 import wipe1 from '~/animations/page_transitions/wipe1'
@@ -32,7 +32,7 @@ export default {
     Background,
     NextPageBackground,
     SwitchText,
-    TitleText,
+    TitleLogo,
     WaitingScroll,
   },
   transition: {
@@ -46,6 +46,7 @@ export default {
           opacity: 0.9
         })
       });
+      await this.$delay(1000);
       fadein2('#index .fade-in-on-page', done, 2.0);
     },
     leave (el, done) {

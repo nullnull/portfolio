@@ -2,8 +2,6 @@
   .root
     .loader-wrapper
       .loader
-      span
-        | loading
 </template>
 
 <script>

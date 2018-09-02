@@ -4,6 +4,9 @@
     div(v-if='allAssetsLoaded')
       //- Show page
       nuxt
+      //- logo
+      #header-logo
+        img(src='~/assets/images/logo/symbol_2_wh.png')
       //- Show next page background image for wipe animation
       nextPageBackground
       //- Show menu bar
@@ -44,4 +47,16 @@ export default {
 .fade-enter,
 .fade-leave-to
   opacity: 0
+
+#header-logo
+  opacity 0
+  position absolute
+  top 0
+  left 0
+  width 40px
+  z-index 1
+
+  img
+    padding 20px
+    width 100%
 </style>
