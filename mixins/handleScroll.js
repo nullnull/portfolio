@@ -16,6 +16,9 @@ export default {
     eventWhenDraggingUp() {
       this.goNextPage();
     },
+    eventWhenDraggingDown() {
+      this.goPrevPage();
+    },
     eventWhenWheelingDown() {
       this.goNextPage();
     },

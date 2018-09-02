@@ -1,12 +1,21 @@
-const currentPathToNextPath = {
-  'index': '/about',
-  'about': '/lovegraph',
-  'lovegraph': '/dena',
-  'dena': '/univ',
-  'univ': '/photography',
-  'photography': '/contact',
-  'contact': '/',
-};
+const paths = ['/', '/about', '/lovegraph', '/dena', '/univ', '/photography', '/contact']
+const pathsWithFallback = [null, ...paths, null]
+
+function getNextPath(targetPath) {
+  const index = pathsWithFallback.findIndex(path => path === targetPath);
+  return pathsWithFallback[index + 1];
+}
+
+function getPrevPath(targetPath) {
+  const index = pathsWithFallback.findIndex(path => path === targetPath);
+  return pathsWithFallback[index - 1];
+}
+
+function moveTo(vue, path) {
+  vue.$store.commit('startPageTransition');
+  vue.$router.push(path);
+  setTimeout(() => vue.$store.commit('stopPageTransition'), 3000); // NOT GOOD IMPLEMENTATION
+}
 
 export default {
   methods: {
@@ -14,14 +23,19 @@ export default {
       if (this.$store.state.menuVisibility || this.$store.state.isPageTransitioning) {
         return;
       }
-      const currentPath = this.$router.currentRoute.name;
-      if (currentPath === 'contact') {
+      const nextPath = getNextPath(this.$router.currentRoute.path);
+      if (nextPath) {
+        moveTo(this, nextPath);
+      }
+    },
+    goPrevPage() {
+      if (this.$store.state.menuVisibility || this.$store.state.isPageTransitioning) {
         return;
       }
-      const nextPath = currentPathToNextPath[currentPath];
-      this.$store.commit('startPageTransition');
-      this.$router.push(nextPath);
-      setTimeout(() => this.$store.commit('stopPageTransition'), 3000); // NOT GOOD IMPLEMENTATION
+      const prevPath = getPrevPath(this.$router.currentRoute.path);
+      if (prevPath) {
+        moveTo(this, prevPath);
+      }
     },
   },
 };
