@@ -12,6 +12,7 @@ module.exports = {
     ['nuxt-stylus-resources-loader', [
         __dirname + '/assets/css/mixin.styl',
     ]],
+    '@nuxtjs/dotenv',
   ],
   /*
   ** Headers of the page
