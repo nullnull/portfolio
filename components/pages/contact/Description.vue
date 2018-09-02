@@ -2,20 +2,19 @@
   .root
     transition(appear @enter='enter')
       .inner
-        .more
-          p.title.description-fade-in
-            | More Detail
-          p.item.description-fade-in
-            a(href='resume201809.pdf' target='_blank')
-              i.fas.fa-chevron-right
-              |  resume(pdf)
         .contact
           p.title.description-fade-in
             | Contact Me
           p.email.description-fade-in
             a(href='mailto:katsuma.narisawa@gmail.com')
               | katsuma.narisawa@gmail.com
+          p.item.description-fade-in
+            a(href='resume201809.pdf' target='_blank')
+              i.fas.fa-chevron-right
+              |  resume(pdf)
           p.sns.description-fade-in
+            a(href='https://nullnull.hatenablog.com/' target='_blank')
+              i.fas.fa-pen-nib
             a(href='https://github.com/nullnull' target='_blank')
               i.fab.fa-github
             a(href='https://twitter.com/KatsumaNarisawa' target='_blank')
@@ -53,7 +52,7 @@ export default {
   padding 0 5px
 
 .inner
-  padding 0 40px
+  padding 40px
   position relative
   text-align center
   border solid 2px white
@@ -62,17 +61,10 @@ export default {
   +pc-only()
     padding 0 10%
 
-.more
-  padding-top 20px
-  padding-bottom 40px
-
-  a
-    cursor pointer
-
 .title
   font-size 18px
   line-height 0.6em
-  padding-bottom 5px
+  padding-bottom 15px
   position relative
   +pc-only()
     font-size 24px
@@ -110,7 +102,6 @@ span.underline
 
 .thanks
   padding-top 30px
-  padding-bottom 20px
 
   p
     font-size 0.5em
