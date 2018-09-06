@@ -1,11 +1,14 @@
 # Katsuma Narisawa's portfolio
+
 http://katsumanarisawa.me/
+
+[![Image from Gyazo](https://i.gyazo.com/00f2efaf8a1b7e80fd466f59f42d12df.jpg)](https://gyazo.com/00f2efaf8a1b7e80fd466f59f42d12df)
 
 by Nuxt.js :tada:
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 $ npm install # Or yarn install
 
