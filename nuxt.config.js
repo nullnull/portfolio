@@ -16,11 +16,11 @@ module.exports = {
     '@nuxtjs/pwa',
   ],
   manifest: {
-    name: 'Katsuma Narisawa',
+    name: '成澤克麻 | Katsuma Narisawa',
     lang: 'ja',
     short_name: 'KN works',
-    title: 'Katsuma Narisawa',
-    'og:title': 'Katsuma Narisawa',
+    title: '成澤克麻 | Katsuma Narisawa',
+    'og:title': '成澤克麻 | Katsuma Narisawa',
     description: 'Web App Engineer Katsuma Narisawa / Webエンジニア 成澤克麻の個人ページ。Webサービス開発全般/自然言語処理などの開発案件、またポートレートを中心とした撮影案件を引き受けています。お問い合わせはお気軽にどうぞ。',
     'og:description': 'Web App Engineer Katsuma Narisawa / Webエンジニア 成澤克麻の個人ページ。Webサービス開発全般/自然言語処理などの開発案件、またポートレートを中心とした撮影案件を引き受けています。お問い合わせはお気軽にどうぞ。',
     theme_color: '#ffffff',
@@ -33,7 +33,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: "Katsuma Narisawa",
+    title: "成澤克麻 | Katsuma Narisawa",
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -42,7 +42,7 @@ module.exports = {
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@KatsumaNarisawa" },
       { property: "og:url", content: "https://katsumanarisawa.me/" },
-      { property: "og:title", content: "Katsuma Narisawa" },
+      { property: "og:title", content: "成澤克麻 | Katsuma Narisawa" },
       { property: "og:description", content: "Web App Engineer Katsuma Narisawa / Webエンジニア 成澤克麻の個人ページ。Webサービス開発全般/自然言語処理などの開発案件、またポートレートを中心とした撮影案件を引き受けています。お問い合わせはお気軽にどうぞ。" },
       { property: "og:image", content: "https://katsumanarisawa.netlify.com/ogp_centered.jpg" },
     ],
