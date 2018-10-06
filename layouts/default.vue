@@ -1,7 +1,7 @@
 <template lang="pug">
   //- scroll handler(see mixins/handleScroll.js)
   div(@touchstart="startTouch($event)" @touchmove.prevent="onTouch($event)" @touchend="stopDrag($event)" @mousedown="startDrag($event)" @mousemove.prevent="onDrag($event)" @mouseup="stopDrag($event)" @wheel="onWheel($event)")
-    div
+    div(v-if='allAssetsLoaded')
       //- Show page
       nuxt
       //- logo
@@ -11,20 +11,30 @@
       nextPageBackground
       //- Show menu bar
       Menu
+    transition(name='fade')
+      div(v-if='!allAssetsLoaded')
+        Loading
 </template>
 
 <script>
 import Menu from '~/components/Menu'
+import Loading from '~/components/Loading'
 import nextPageBackground from '~/components/layouts/default/NextPageBackground'
 import handleScroll from '~/mixins/handleScroll'
+import assetsLoader from '~/mixins/assetsLoader'
 
 export default {
   components: {
+    Loading,
     Menu,
     nextPageBackground,
   },
+  mounted() {
+    this.loadAssets();
+  },
   mixins: [
     handleScroll,
+    assetsLoader,
   ],
 }
 </script>
