@@ -24,12 +24,10 @@ module.exports = {
     description: 'Web App Engineer Katsuma Narisawa / Webエンジニア 成澤克麻の個人ページ。Webサービス開発全般/自然言語処理などの開発案件、またポートレートを中心とした撮影案件を引き受けています。お問い合わせはお気軽にどうぞ。',
     'og:description': 'Web App Engineer Katsuma Narisawa / Webエンジニア 成澤克麻の個人ページ。Webサービス開発全般/自然言語処理などの開発案件、またポートレートを中心とした撮影案件を引き受けています。お問い合わせはお気軽にどうぞ。',
     theme_color: '#ffffff',
-    background_color: '#ffffff',
-    cache: true,
+    background_color: '#ffffff'
   },
   workbox: {
     dev: true,
-    offlinePage: '/',
   },
   /*
   ** Headers of the page
